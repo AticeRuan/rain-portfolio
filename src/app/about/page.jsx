@@ -67,11 +67,8 @@ const experiences = [
 
 const About = () => {
   const skillRef = useRef()
-  const isLargeScreen = window && window.innerWidth > 1280
-  const isSkillRefInView = useInView(
-    skillRef,
-    isLargeScreen ? { once: true } : { margin: '-100px' },
-  )
+
+  const isSkillRefInView = useInView(skillRef, { margin: '-100px' })
 
   const experienceRef = useRef()
   const isExperienceRefInView = useInView(experienceRef, {
@@ -153,9 +150,9 @@ const About = () => {
               ref={skillRef}
             >
               <motion.h1
-                initial={isLargeScreen ? { x: '130vw' } : { x: '-100vw' }}
+                initial={{ x: '100vw' }}
                 animate={isSkillRefInView ? { x: 0 } : {}}
-                transition={isLargeScreen ? { delay: 1.2 } : { delay: 1.2 }}
+                transition={{ delay: 1.2 }}
                 className="font-bold text-2xl uppercase"
               >
                 Skills
@@ -163,9 +160,9 @@ const About = () => {
               {/* skill tags */}
               <motion.div
                 className="flex gap-4 flex-wrap cursor-pointer"
-                initial={isLargeScreen ? { x: '200vw' } : { x: '-200vw' }}
+                initial={{ x: '200vw' }}
                 animate={isSkillRefInView ? { x: 0 } : {}}
-                transition={isLargeScreen ? { delay: 1.2 } : { delay: 1.5 }}
+                transition={{ delay: 1.5 }}
               >
                 {skills.map((skill, index) => (
                   <div
@@ -177,18 +174,8 @@ const About = () => {
                 ))}
               </motion.div>
             </div>
-
-            <div
-              className="block lg:hidden"
-              style={isExperienceRefInView ? { opacity: 0 } : { opacity: 1 }}
-            >
-              <DownArrow />
-            </div>
           </div>{' '}
-          <div
-            className="hidden lg:block"
-            style={isExperienceRefInView ? { opacity: 0 } : { opacity: 1 }}
-          >
+          <div style={isExperienceRefInView ? { opacity: 0 } : { opacity: 1 }}>
             <DownArrow />
           </div>
           {/* experiences container */}
