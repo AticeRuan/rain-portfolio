@@ -54,11 +54,11 @@ const listVariants = {
 const listItemVariants = {
   closed: {
     opacity: 0,
-    y: -10,
+    x: -10,
   },
   open: {
     opacity: 1,
-    y: 0,
+    x: 0,
   },
 }
 
@@ -123,7 +123,7 @@ const Navbar = () => {
           >
             {links.map((link) => (
               <motion.div key={link.url} variants={listItemVariants}>
-                <Link href={link.url} className="">
+                <Link href={link.url} className="z-40">
                   {link.title}
                 </Link>
               </motion.div>
