@@ -67,7 +67,7 @@ const experiences = [
 
 const About = () => {
   const skillRef = useRef()
-  const isLargeScreen = window.innerWidth > 1280
+  const isLargeScreen = window && window.innerWidth > 1280
   const isSkillRefInView = useInView(
     skillRef,
     isLargeScreen ? { once: true } : { margin: '-100px' },
