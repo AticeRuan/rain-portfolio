@@ -4,7 +4,7 @@ const Experience = ({ experience }) => {
   return (
     <div className="w-1/3 ">
       {/* JOB TITLE */}
-      <div className="bg-white p-3 font-semibold  rounded-lg md:text-base text-sm w-fit">
+      <div className="bg-white p-3 font-semibold text-black  rounded-lg md:text-base text-sm w-fit">
         {experience.title}
       </div>
       {/* JOB DESC */}
@@ -14,7 +14,7 @@ const Experience = ({ experience }) => {
         ))}
       </div>
       {/* JOB DATE */}
-      <div className="p-3 text-red-400 md:text-sm font-semibold  text-[.8rem]">
+      <div className="p-3 text-[#cace64] md:text-sm font-semibold  text-[.8rem]">
         {experience.date}
       </div>
       {/* JOB COMPANY */}

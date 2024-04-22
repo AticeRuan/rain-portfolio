@@ -85,12 +85,12 @@ const About = () => {
       {/* container */}
       <div className="h-full  pt-20 ">
         {/* text container */}
-        <div className=" px-6 sm:p-10 md:px-20 lg:px-40 xl:px-[12rem] 2xl:px-[20rem] flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 ">
+        <div className=" px-6 sm:p-10 md:px-20 lg:px-40 xl:px-[12rem] 2xl:px-[20rem] flex flex-col gap-24 md:gap-32  lg:gap-48 xl:gap-25 ">
           <div className="flex flex-col xl:flex-row gap-24 md:gap-32 lg:gap-48 xl:gap-52 items-start xl:items-center">
             {/* Biography container */}
             <motion.div className="flex flex-col gap-12 justify-center">
               <motion.h1
-                className="font-bold text-2xl uppercase"
+                className="font-bold text-2xl uppercase text-[#cace64]"
                 initial={{ x: '-100vw', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 1 }}
@@ -139,7 +139,7 @@ const About = () => {
                 }}
                 className="w-scren flex items-center justify-center"
               >
-                <div className="block lg:hidden">
+                <div className="block xl:hidden">
                   <DownArrow />
                 </div>
               </motion.div>
@@ -153,13 +153,13 @@ const About = () => {
                 initial={{ x: '100vw' }}
                 animate={isSkillRefInView ? { x: 0 } : {}}
                 transition={{ delay: 1.2 }}
-                className="font-bold text-2xl uppercase"
+                className="font-bold text-2xl uppercase text-[#cace64] "
               >
                 Skills
               </motion.h1>
               {/* skill tags */}
               <motion.div
-                className="flex gap-4 flex-wrap cursor-pointer"
+                className="flex gap-4 flex-wrap cursor-pointer "
                 initial={{ x: '200vw' }}
                 animate={isSkillRefInView ? { x: 0 } : {}}
                 transition={{ delay: 1.5 }}
@@ -187,7 +187,7 @@ const About = () => {
               initial={{ x: '-100vw' }}
               animate={isExperienceRefInView ? { x: 0 } : {}}
               transition={{ delay: 0.8 }}
-              className="font-bold text-2xl uppercase"
+              className="font-bold text-2xl uppercase text-[#cace64] "
             >
               Experience
             </motion.h1>

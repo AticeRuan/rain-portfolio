@@ -82,7 +82,7 @@ const Portfolio = () => {
       <div className="h-[600vh] relative" ref={sectionOneRef}>
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
           <div className="flex flex-col ">
-            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-white w-fit ">
+            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
               My works
             </span>
             <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl">
@@ -130,7 +130,7 @@ const Portfolio = () => {
       <div className="h-[600vh] relative" ref={sectionTwoRef}>
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
           <div className="flex flex-col ">
-            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-white w-fit ">
+            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
               My works
             </span>
             <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl">
@@ -177,7 +177,7 @@ const Portfolio = () => {
       <div className="h-[600vh] relative" ref={sectionThreeRef}>
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
           <div className="flex flex-col ">
-            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-white w-fit ">
+            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
               My works
             </span>
             <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl">
@@ -231,7 +231,7 @@ const Portfolio = () => {
           </div>
           <button></button>
           <Link
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full font-bold flex items-center justify-center z-40"
+            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-[#cace64] rounded-full font-bold flex items-center justify-center z-40"
             href="/contact"
           >
             <button>Email me</button>

@@ -41,10 +41,10 @@ const Homepage = () => {
                 className="absolute inset-0 flex items-center justify-center flex-col font-black"
                 style={{ scale }}
               >
-                <h1 className="text-8xl sm:text-[10rem] md:text-[13rem] lg:text-[16rem] xl:text-[21rem] 2xl:text-[30rem] font-black leading-3 tracking-tightest  ">
+                <h1 className="text-8xl sm:text-[10rem] md:text-[13rem] lg:text-[16rem] xl:text-[21rem] 2xl:text-[23rem]  text-[#4895d7]   leading-3 tracking-tightest backdrop-blur-md opacity-80 text-shadow">
                   Developer
                 </h1>
-                <h1 className="text-8xl sm:text-[10rem] md:text-[13rem] lg:text-[16rem] xl:text-[21rem] 2xl:text-[30rem] font-black tracking-tightest text-gray-800">
+                <h1 className="text-8xl sm:text-[10rem] md:text-[13rem] lg:text-[16rem] xl:text-[21rem] 2xl:text-[23rem] font-black tracking-tightest   text-[#4895d7] text-shadow">
                   Designer
                 </h1>
               </motion.div>
@@ -54,7 +54,7 @@ const Homepage = () => {
               >
                 {' '}
                 <div className={nicone.className}>
-                  <p className="text-white  text-5xl md:text-[7rem] sm:text-8xl lg:text-[8rem] xl:text-[10rem]  2xl:text-[13rem] whitespace-nowrap">
+                  <p className="text-[#cace64] text-5xl md:text-[7rem] sm:text-8xl lg:text-[8rem] xl:text-[10rem]  2xl:text-[13rem] whitespace-nowrap">
                     Rain Ruan{' '}
                   </p>
                 </div>
@@ -69,8 +69,8 @@ const Homepage = () => {
           <DownArrow />
         </motion.div>
         {/* text */}
-        <div className="h-[calc(100vh-6rem)] lg:w-1/2 flex flex-col gap-8 px-6 sm:px-8 md:px-12 lg:px-1 justify-center relative z-10 overflow-clip">
-          <h1 className="text-4xl md:text-6xl font-bold">
+        <div className="h-[calc(100vh-6rem)] lg:w-1/2 flex flex-col gap-8 px-6 sm:px-8 md:px-12 lg:px-1 justify-center relative z-10 overflow-clip text-white">
+          <h1 className="text-4xl md:text-6xl font-bold text-white">
             Limitless creativity transcends knowledge boundaries
           </h1>
           <p>

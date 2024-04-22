@@ -23,9 +23,9 @@ const Contact = () => {
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 pt-2 md:pt15">
         {/* text container */}
-        <div className="h-full my-20 lg:my-0 lg:w-1/2 flex items-center justify-center text-6xl font-bold">
+        <div className="min-h-1/2 my-20 lg:my-0 lg:w-1/2 flex items-center justify-center text-6xl font-bold">
           <motion.div>
             {text.split('').map((letter, index) => (
               <motion.span
@@ -45,15 +45,15 @@ const Contact = () => {
         </div>
         {/* form container */}
         <motion.div
-          className="h-full lg:w-1/2 bg-red-50/20 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md  "
-          initial={{ y: '200vh' }}
+          className="h-full lg:w-1/2 bg-red-50/30 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md flex items-center justify-center lg:mt-[15vh]"
+          initial={{ y: '100vh' }}
           animate={{ y: '0' }}
-          transition={{ duration: 2, delay: 1 }}
+          transition={{ duration: 1, delay: 1 }}
         >
           <form
             onSubmit={handleSubmit}
             ref={form}
-            className="text-xl flex flex-col gap-20 justify-center p-24 z-50"
+            className="text-lg md:text-lg flex flex-col gap-20 justify-center p-20 md:p-24 z-50"
           >
             <span>Dear Rain,</span>
             <textarea
@@ -62,7 +62,7 @@ const Contact = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <span>My mail address is:</span>
+            <span>My email address is:</span>
             <input
               value={email}
               type="text"
@@ -70,7 +70,7 @@ const Contact = () => {
               className="bg-transparent border-b-2 border-b-black outline-none z-50"
             />
             <span>Regards</span>
-            <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
+            <button className="bg-[#cace64] rounded font-semibold text-gray-800 p-4">
               Send
             </button>
             {success && (
