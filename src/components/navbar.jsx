@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import NavLink from './navlink'
 import { motion } from 'framer-motion'
+import Github from './svg/github'
+import LinkedIn from './svg/linkedIn'
 const links = [
   { url: '/', title: 'Home' },
   { url: '/about', title: 'About' },
@@ -87,8 +89,12 @@ const Navbar = () => {
       </div>
       {/* Social links */}
       <div className="hidden md:flex text-xs gap-4 items-center justify-center w-1/3">
-        <Link href="https://github.com/AticeRuan">Github</Link>
-        <Link href="https://www.linkedin.com/in/rain-ruan/">LinkedIn</Link>
+        <Link href="https://github.com/AticeRuan">
+          <Github />
+        </Link>
+        <Link href="https://www.linkedin.com/in/rain-ruan/">
+          <LinkedIn />
+        </Link>
       </div>
       {/* Responsive menu */}
       <div className=" md:hidden">
