@@ -175,7 +175,7 @@ const About = () => {
               </motion.div>
             </div>
           </div>{' '}
-          <div style={isExperienceRefInView ? { opacity: 0 } : { opacity: 1 }}>
+          <div>
             <DownArrow />
           </div>
           {/* experiences container */}

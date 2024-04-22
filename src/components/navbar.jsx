@@ -68,18 +68,18 @@ const Navbar = () => {
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-lg z-[100] ">
       {/* md screen menu */}
-      <div className="hidden md:flex w-1/3 md:w-1/2 2xl:w-1/3">
+      <div className="hidden md:flex w-1/3 md:w-[80%] 2xl:w-1/3 gap-12">
         {links.map((link) => (
           <NavLink link={link} key={link.title} />
         ))}
       </div>
       {/* logo */}
-      <div className="md:hidden lg:flex lg:w-1/3 xl:justify-cente ml-0 md:m-20">
+      <div className="md:hidden lg:flex lg:w-1/4 xl:justify-center ml-0 md:m-20 fixed top-5 left-4 lg:static">
         <Link
           href="/"
           className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
         >
-          <span className="text-[#cace64] mr-1">Rain</span>
+          <span className="text-[#E6F14A] mr-1 ">Rain</span>
           <span className="text-black w-12 h-8 rounded bg-white flex items-center justify-center">
             Ruan
           </span>
@@ -94,7 +94,7 @@ const Navbar = () => {
       <div className=" md:hidden">
         {/* hamburger */}
         <button
-          className="w-10 h-8 flex flex-col justify-between z-50 relative"
+          className="w-10 h-8 flex flex-col justify-between z-50 fixed top-4 right-4 "
           onClick={() => setOpen((prev) => !prev)}
         >
           <motion.div
@@ -116,7 +116,7 @@ const Navbar = () => {
         {/* menu list */}
         {open && (
           <motion.div
-            className="absolute top-0 left-0 w-screen h-screen bg-black text-[#cace64] flex flex-col items-center justify-center gap-8 text-4xl z-40"
+            className="absolute top-0 left-0 w-screen h-screen bg-black text-[#E6F14A] flex flex-col items-center justify-center gap-8 text-4xl z-40"
             variants={listVariants}
             initial="closed"
             animate="open"

@@ -70,7 +70,7 @@ const Contact = () => {
               className="bg-transparent border-b-2 border-b-black outline-none z-50"
             />
             <span>Regards</span>
-            <button className="bg-[#cace64] rounded font-semibold text-gray-800 p-4">
+            <button className="bg-[#E6F14A] rounded font-semibold text-gray-800 p-4">
               Send
             </button>
             {success && (

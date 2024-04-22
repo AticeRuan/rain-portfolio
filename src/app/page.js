@@ -54,7 +54,7 @@ const Homepage = () => {
               >
                 {' '}
                 <div className={nicone.className}>
-                  <p className="text-[#cace64] text-5xl md:text-[7rem] sm:text-8xl lg:text-[8rem] xl:text-[10rem]  2xl:text-[13rem] whitespace-nowrap">
+                  <p className="text-[#E6F14A] text-5xl md:text-[7rem] sm:text-8xl lg:text-[8rem] xl:text-[10rem]  2xl:text-[13rem] whitespace-nowrap">
                     Rain Ruan{' '}
                   </p>
                 </div>
@@ -89,12 +89,12 @@ const Homepage = () => {
           </p>
           <div className="w-full flex gap-4">
             <Link href="/portfolio">
-              <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
+              <button className="p-4 rounded-lg ring-1 ring-black bg-black text-[#E6F14A]">
                 View My Work
               </button>
             </Link>
             <Link href="/contact">
-              <button className="p-4 rounded-lg ring-1 ring-blac">
+              <button className="p-4 rounded-lg ring-1 ring-[#E6F14A]">
                 Contact me
               </button>
             </Link>
