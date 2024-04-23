@@ -109,7 +109,7 @@ const designItems = [
     color: 'from-red-300 to-blue-300',
     title: 'Selene App Prototype ',
     desc: 'I designed and prototyped Selene, a lifestyle mobile application catering to astronomy enthusiasts and moon lovers. Named after the Greek goddess of the moon, Selene offers users detailed moon-related information for each day, presented within a sleek clock app interface. Additionally, Selene features a unique pet simulator component, allowing users to adopt and care for a werewolf within the app. I conceptualized the app and designed its UI using Photoshop and Figma. The prototype was developed using C# and Visual Studio, ensuring a seamless and engaging user experience.',
-    img: '/assets/des01.JPG',
+    img: '/assets/des01.jpg',
 
     link: [
       {
@@ -163,7 +163,7 @@ const designItems = [
     color: 'from-purple-300 to-red-300',
     title: 'Pin and Grab Sern Stack Project ',
     desc: 'A web platform to connect individual job seekers and clients. Used SERN stack and Docker development environment, as well as agile scrum and kanban methodology. Personal contribution: Conceptualized the core idea of Pin and Grab. Utilized React and MUI for development. Designed and implemented React component structure and styling.',
-    img: '/assets/dev05.JPG',
+    img: '/assets/dev05.jpg',
     hashtag: '#Colab Project',
     link: [
       {
