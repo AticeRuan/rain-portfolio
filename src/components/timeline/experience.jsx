@@ -18,7 +18,7 @@ const Experience = ({ experience }) => {
         {experience.date}
       </div>
       {/* JOB COMPANY */}
-      <div className="p-1 rounded bg-white text-[0.6rem] font-semibold w-fit">
+      <div className="p-1 rounded bg-white text-[0.8rem] font-semibold w-fit text-black">
         {experience.company}
       </div>
     </div>

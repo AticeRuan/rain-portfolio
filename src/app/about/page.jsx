@@ -98,7 +98,7 @@ const About = () => {
                 Biography
               </motion.h1>
               <motion.p
-                className="flex justify-between text-lg"
+                className="flex justify-between md:text-lg"
                 initial={{ x: '-200vw', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 1.5 }}
@@ -113,7 +113,7 @@ const About = () => {
                 ultimately discovering solutions fills me with exhilaration.
               </motion.p>
               <motion.p
-                className="flex justify-between text-lg"
+                className="flex justify-between md:text-lg"
                 initial={{ x: '-200vw' }}
                 animate={{ x: 0 }}
                 transition={{ delay: 1.5 }}

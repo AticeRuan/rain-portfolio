@@ -5,6 +5,7 @@ import NavLink from './navlink'
 import { motion } from 'framer-motion'
 import Github from './svg/github'
 import LinkedIn from './svg/linkedIn'
+import Email from './svg/email'
 const links = [
   { url: '/', title: 'Home' },
   { url: '/about', title: 'About' },
@@ -94,6 +95,9 @@ const Navbar = () => {
         </Link>
         <Link href="https://www.linkedin.com/in/rain-ruan/">
           <LinkedIn />
+        </Link>
+        <Link href="mailto:rainryy@gmail.com">
+          <Email />
         </Link>
       </div>
       {/* Responsive menu */}

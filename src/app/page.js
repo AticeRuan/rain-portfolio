@@ -41,10 +41,10 @@ const Homepage = () => {
                 className="absolute inset-0 flex items-center justify-center flex-col font-black"
                 style={{ scale }}
               >
-                <h1 className="text-8xl sm:text-[10rem] md:text-[13rem] lg:text-[16rem] xl:text-[21rem] 2xl:text-[23rem]  text-[#4895d7]   leading-3 tracking-tightest backdrop-blur-md opacity-80 text-shadow">
+                <h1 className="text-8xl sm:text-[10rem] md:text-[11rem] lg:text-[16rem] xl:text-[18rem] 2xl:text-[23rem]  text-[#4895d7]   leading-3 tracking-tightest backdrop-blur-md opacity-80 text-shadow">
                   Developer
                 </h1>
-                <h1 className="text-8xl sm:text-[10rem] md:text-[13rem] lg:text-[16rem] xl:text-[21rem] 2xl:text-[23rem] font-black tracking-tightest   text-[#4895d7] text-shadow">
+                <h1 className="text-8xl sm:text-[10rem] md:text-[11rem] lg:text-[16rem] xl:text-[18rem] 2xl:text-[23rem] font-black tracking-tightest   text-[#4895d7] text-shadow">
                   Designer
                 </h1>
               </motion.div>
@@ -69,32 +69,38 @@ const Homepage = () => {
           <DownArrow />
         </motion.div>
         {/* text */}
-        <div className="h-[calc(100vh-6rem)] lg:w-1/2 flex flex-col gap-8 px-6 sm:px-8 md:px-12 lg:px-1 justify-center relative z-10 overflow-clip text-white">
+        <div
+          id="text"
+          className="h-[calc(100vh-6rem)] lg:w-1/2 flex flex-col gap-8 px-10  md:px-12 lg:px-1 justify-center relative z-10 overflow-clip text-white"
+        >
           <h1 className="text-4xl md:text-6xl font-bold text-white">
             Limitless creativity transcends knowledge boundaries
           </h1>
-          <p>
-            I love to create and find it comfortable and secure to work within
-            sensible guidelines or structures. Software development is in line
-            with my spiritual order - to perform routine or standardized tasks
-            using creative thinking and problem-solving skills. I feel grounded
-            and joyful by adhering to the logical constructs of programming
-            languages while unleashing my creativity. Experimenting with
-            different approaches and ultimately discovering solutions fills me
-            with exhilaration.{' '}
+          <p className="text-lg md:text-xl">
+            Welcome! I&apos;m thrilled to have you here.
           </p>
-          <p>
-            Therefore, it has become my passion, my hobby, and will be my
-            career.
+          <p className="text-lg md:text-xl">
+            I&apos;m passionate about creating, whether it&apos;s crafting
+            websites, developing software, designing graphics, composing music,
+            or producing videos. My skills are diverse and adaptable, allowing
+            me to bring creativity to any project.
+          </p>
+          <p className="text-lg md:text-xl">
+            I&apos;m currently open to new opportunities, whether it&apos;s a
+            part-time or full-time position, or a freelance project, big or
+            small. I&apos;m eager to collaborate and bring your ideas to life.
+          </p>
+          <p className="text-lg md:text-xl">
+            Let&apos;s create something amazing together!
           </p>
           <div className="w-full flex gap-4">
             <Link href="/portfolio">
-              <button className="p-4 rounded-lg ring-1 ring-black bg-black text-[#E6F14A]">
+              <button className="p-4 rounded-lg ring-1 ring-black bg-black text-[#E6F14A] text-lg md:text-xl">
                 View My Work
               </button>
             </Link>
             <Link href="/contact">
-              <button className="p-4 rounded-lg ring-1 ring-[#E6F14A]">
+              <button className="p-4 rounded-lg ring-1 ring-[#E6F14A] text-lg md:text-xl font-bold">
                 Contact me
               </button>
             </Link>

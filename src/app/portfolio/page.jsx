@@ -271,11 +271,6 @@ const Portfolio = () => {
     else return null
   }
 
-  console.log(
-    'LINK:',
-    developmentItems[0].link.map((link) => link),
-  )
-
   return (
     <motion.div
       className="h-full"
@@ -287,11 +282,17 @@ const Portfolio = () => {
       <div className="h-[600vh] relative" ref={sectionOneRef}>
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
           <div className="flex flex-col ">
-            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
+            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5 md:mb-0">
+              Media Production
+            </h1>
+            <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
               My works
             </span>
-            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10">
+            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
               Development
+            </h1>
+            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+              Design
             </h1>
           </div>
 
@@ -302,20 +303,22 @@ const Portfolio = () => {
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div className="flex  z-50" style={{ x: sectionOneX }}>
             <div
-              className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
+              className={`h-screen w-screen flex items-start justify-start bg-gradient-to-r from-purple-300 to-red-300`}
             ></div>
             {developmentItems.map((item) => (
               <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
+                className={`min-h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color} `}
                 style={{ x: sectionOneX }}
                 key={item.id}
               >
                 <div className="flex flex-col gap-8 text-white">
-                  {/* title */}
+                  {/* title */}{' '}
+                  <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
+                    Development
+                  </span>
                   <h1 className="text-xl  md:text-4xl lg:text-6xl xl:text-7xl font-bold ">
                     {item.title}
                   </h1>
-
                   <div className="relateive">
                     <div className="flex flex-col xl:flex-row xl:gap-20">
                       <div>
@@ -324,11 +327,11 @@ const Portfolio = () => {
                           <Image src={item.img} alt="" fill />
                         </div>
                         {/* hashtag */}
-                        <p className="font-bold mt-3 text-xl text-red-500">
+                        <p className="font-bold mt-3 text-sm md:text-xl text-red-500">
                           {item.hashtag && item.hashtag}
                         </p>{' '}
                         {/* link */}
-                        <div className="flex items-center justify-start gap-4 text-white mt-6 ">
+                        <div className="flex items-center justify-start gap-4 text-white mt-2 md:mt-6 ">
                           {item.link &&
                             Array.isArray(item.link) &&
                             item.link.map((link) => (
@@ -344,17 +347,17 @@ const Portfolio = () => {
                       </div>
                       <div className="flex flex-col items-start">
                         {/* description */}{' '}
-                        <div className="flex gap-4 flex-wrap cursor-pointer mt-10 w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px]">
+                        <div className="flex gap-4 flex-wrap cursor-pointer mt-4 md:mt-10 w-[80vw] md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px]">
                           {item.skills.map((skill, index) => (
                             <div
                               key={index}
-                              className="rounded p-2 text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
+                              className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
                             >
                               {skill}
                             </div>
                           ))}
                         </div>
-                        <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px] mt-8 text-slate-800">
+                        <p className="w-80 md:w-96 lg:w-[500px]  lg:text-xl  xl:w-[600px] mt-8 text-slate-800 text-xs md:text-sm">
                           {item.desc}
                         </p>
                       </div>
@@ -370,11 +373,17 @@ const Portfolio = () => {
       <div className="h-[600vh] relative" ref={sectionTwoRef}>
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
           <div className="flex flex-col ">
-            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
+            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5">
+              Development
+            </h1>
+            <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
               My works
             </span>
-            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-8">
+            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
               Design
+            </h1>
+            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+              Media Production
             </h1>
           </div>
 
@@ -388,13 +397,16 @@ const Portfolio = () => {
             ></div>
             {designItems.map((item) => (
               <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
+                className={`h-screen w-screen flex  bg-gradient-to-r ${item.color} items-center justify-center `}
                 style={{ x: sectionOneX }}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
+                <div className="flex flex-col gap-8 text-white  ">
                   {/* title */}
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-7xl ">
+                  <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] ">
+                    Design
+                  </span>
+                  <h1 className=" text-xl font-bold md:text-4xl lg:text-6xl xl:text-7xl w-[80vw]">
                     {item.title}
                   </h1>
 
@@ -426,17 +438,17 @@ const Portfolio = () => {
                       </div>
                       <div className="flex flex-col items-start">
                         {/* description */}{' '}
-                        <div className="flex gap-4 flex-wrap cursor-pointer mt-10 w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px]">
+                        <div className="flex gap-4 flex-wrap cursor-pointer mt-6 md:mt-10 w-80 md:w-96 lg:w-[500px] lg:text-xl text-sm xl:w-[600px]">
                           {item.skills.map((skill, index) => (
                             <div
                               key={index}
-                              className="rounded p-2 text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
+                              className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
                             >
                               {skill}
                             </div>
                           ))}
                         </div>
-                        <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px] mt-8 text-slate-800">
+                        <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl text-xs  xl:w-[600px] mt-8 text-slate-800">
                           {item.desc}
                         </p>
                       </div>
@@ -452,42 +464,50 @@ const Portfolio = () => {
       <div className="h-[600vh] relative" ref={sectionThreeRef}>
         <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
           <div className="flex flex-col ">
-            <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
+            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-3 md:mb-5">
+              Design
+            </h1>
+            <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
               My works
             </span>
-            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10">
+            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
               Media Production
+            </h1>
+            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+              Development
             </h1>
           </div>
 
           <DownArrow />
         </div>
         {/* media mapping */}
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
+        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden ">
           <motion.div className="flex" style={{ x: sectionThreeX }}>
             <div
               className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
             ></div>
+
             {mediaItems.map((item) => (
               <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
+                className={`h-screen w-screen flex items-center justify-center  bg-gradient-to-r ${item.color}`}
                 style={{ x: sectionOneX }}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
-                  {/* title */}
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-7xl ">
+                <div className="flex flex-col gap-8 text-white ">
+                  {/* title */}{' '}
+                  <span className="text-[.8rem] md:text-sm lg:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
+                    Media Production
+                  </span>
+                  <h1 className="text-xl w-[80vw] font-bold md:text-4xl lg:text-6xl xl:text-7xl ">
                     {item.title}
                   </h1>
-
                   <div className="relateive">
                     <div className="flex flex-col xl:flex-row xl:gap-20">
                       <div>
                         {/* video */}
                         <div className="relative ">
                           <iframe
-                            width="420"
-                            height="315"
+                            className="w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]"
                             src={item.link}
                           ></iframe>
                         </div>
@@ -498,13 +518,13 @@ const Portfolio = () => {
                           {item.skills.map((skill, index) => (
                             <div
                               key={index}
-                              className="rounded p-2 text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
+                              className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
                             >
                               {skill}
                             </div>
                           ))}
                         </div>
-                        <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px] mt-8 text-slate-800">
+                        <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px] mt-8 text-slate-800 text-xs">
                           {item.desc}
                         </p>
                       </div>
@@ -526,7 +546,7 @@ const Portfolio = () => {
           </div>
           <button></button>
           <Link
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-[#cace64] rounded-full font-bold flex items-center justify-center z-40"
+            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-[#cace64] rounded-full font-bold flex items-center justify-center z-30"
             href="/contact"
           >
             <button>Email me</button>

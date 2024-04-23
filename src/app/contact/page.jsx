@@ -23,7 +23,7 @@ const Contact = () => {
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 pt-2 md:pt15">
+      <div className="min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 pt-2 md:pt-15">
         {/* text container */}
         <div className="min-h-1/2 my-20 lg:my-0 lg:w-1/2 flex items-center justify-center text-6xl font-bold">
           <motion.div>
@@ -45,21 +45,23 @@ const Contact = () => {
         </div>
         {/* form container */}
         <motion.div
-          className="h-full lg:w-1/2 bg-red-50/30 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md flex items-center justify-center lg:mt-[15vh]"
+          className="h-full lg:w-1/2 bg-red-50/30 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md flex items-center justify-center lg:mt-[10vh]"
           initial={{ y: '100vh' }}
           animate={{ y: '0' }}
           transition={{ duration: 1, delay: 1 }}
         >
           <form
-            onSubmit={handleSubmit}
             ref={form}
             className="text-lg md:text-lg flex flex-col gap-20 justify-center p-20 md:p-24 z-50"
+            action="https://formsubmit.co/rainryy@gmail.com"
+            method="POST"
           >
             <span>Dear Rain,</span>
             <textarea
               rows={6}
               className="bg-transparent border-b-2 border-b-black outline-none resize-none"
               value={message}
+              name="message"
               onChange={(e) => setMessage(e.target.value)}
             />
             <span>My email address is:</span>
@@ -67,10 +69,14 @@ const Contact = () => {
               value={email}
               type="text"
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-transparent border-b-2 border-b-black outline-none z-50"
+              className="bg-transparent border-b-2 border-b-black outline-none z-50 mt-[-4rem]"
+              name="email"
             />
             <span>Regards</span>
-            <button className="bg-[#E6F14A] rounded font-semibold text-gray-800 p-4">
+            <button
+              type="submit"
+              className="bg-[#E6F14A] rounded font-semibold text-gray-800 p-4"
+            >
               Send
             </button>
             {success && (
