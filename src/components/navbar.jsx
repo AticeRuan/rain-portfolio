@@ -72,7 +72,7 @@ const Navbar = () => {
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-lg z-[100] ">
       {/* md screen menu */}
-      <div className="hidden md:flex w-1/3 md:w-[80%] 2xl:w-1/3 gap-12">
+      <div className="hidden z-0 md:z-10 md:flex w-1/3 md:w-[80%] 2xl:w-1/3 gap-12">
         {links.map((link) => (
           <NavLink link={link} key={link.title} />
         ))}
@@ -88,7 +88,7 @@ const Navbar = () => {
             Ruan
           </span>
         </Link>
-        <Link href="/" className="block md:hidden">
+        <Link href="/" className="block md:hidden z-10 md:z-0">
           <Logo />
         </Link>
       </div>
