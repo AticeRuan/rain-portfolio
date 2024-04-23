@@ -2,6 +2,7 @@ import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import TransitionProvider from '../components/transitionProvider'
 import Raindrop from '@/components/raindrop'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['500', '800'] })
@@ -15,6 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/assets/favicon.ico"></link>
+      </Head>
       <body className={montserrat.className}>
         {' '}
         <div>
