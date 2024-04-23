@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import Github from './svg/github'
 import LinkedIn from './svg/linkedIn'
 import Email from './svg/email'
+import Logo from './svg/logo'
 const links = [
   { url: '/', title: 'Home' },
   { url: '/about', title: 'About' },
@@ -80,12 +81,15 @@ const Navbar = () => {
       <div className="md:hidden lg:flex lg:w-1/4 xl:justify-center ml-0 md:m-20 fixed top-5 left-4 lg:static">
         <Link
           href="/"
-          className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
+          className="hidden md:flex text-sm bg-black rounded-md p-1 font-semibold  items-center justify-center"
         >
           <span className="text-[#E6F14A] mr-1 ">Rain</span>
           <span className="text-black w-12 h-8 rounded bg-white flex items-center justify-center">
             Ruan
           </span>
+        </Link>
+        <Link href="/" className="block md:hidden">
+          <Logo />
         </Link>
       </div>
       {/* Social links */}
