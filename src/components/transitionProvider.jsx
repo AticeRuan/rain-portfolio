@@ -12,7 +12,7 @@ const TransitionProvider = ({ children }) => {
       {' '}
       <div
         key={pathName}
-        className="w-screen h-auto bg-gradient-to-b text-white from-[#4895d7] via-[#644b74] to-[#030636] area"
+        className="w-screen h-auto bg-gradient-to-b text-white from-[#4895d7] via-[#AD88C6] to-[#212A3E] area"
       >
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40 hidden md:block"

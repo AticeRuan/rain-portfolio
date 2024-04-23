@@ -82,7 +82,7 @@ const developmentItems = [
     id: 4,
     color: 'from-purple-300 to-red-300',
     title: 'Health Lounge Papamoa Website',
-    desc: 'The project involved collaborating with a health therapist client to develop a website that reflects the principles of Huangdi Neijing, an ancient Chinese medical text. With a focus on holistic health and well-being, the website was designed to embody the spirit of Huangdi Neijing, offering visitors a serene and informative online space. As part of the project, I created engaging and informative website content that aligns with the cliens practice. Leveraging React and Material-UI, I designed, developed, and deployed the website, ensuring a seamless and intuitive user experience. The final result is a beautifully crafted website that not only showcases the clients services but also reflects the essence of Huangdi Neijing, inviting visitors to explore and discover the path to holistic health and wellness.ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
+    desc: 'The project involved collaborating with a health therapist client to develop a website that focuses on embodying the spirit of Huangdi Neijing, offering visitors a serene and informative online space. As part of the project, I created engaging and informative website content that aligns with the cliens practice. Leveraging React and Material-UI, I designed, developed, and deployed the website, ensuring a seamless and intuitive user experience. ',
     img: '/assets/dev01.JPG',
     link: [
       {
