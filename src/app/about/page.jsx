@@ -6,7 +6,7 @@ import CentreLine from '@/components/timeline/centreLine'
 import Experience from '@/components/timeline/experience'
 import DownArrow from '@/components/svg/downArrow'
 import Signature from '@/components/svg/signature'
-import Raindrop from '@/components/raindrop'
+import BackToTopButton from '@/components/backToTopButton'
 
 // skills data
 const skills = [
@@ -75,6 +75,13 @@ const About = () => {
     margin: '-100px',
   })
 
+  const skillMobileRef = useRef()
+
+  const isSkillMobileRefInView = useInView(skillMobileRef, { once: true })
+  const experienceMobileRef = useRef()
+  const isExperienceMobileRefInView = useInView(experienceMobileRef, {
+    once: true,
+  })
   return (
     <motion.div
       className="h-full"
@@ -82,26 +89,26 @@ const About = () => {
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
     >
-      {/* container */}
-      <div className="h-full  pt-20 ">
+      {/* mobile container */}
+      <div className="h-full  pt-20 md:hidden ">
         {/* text container */}
-        <div className=" px-6 sm:p-10 md:px-20 lg:px-40 xl:px-[12rem] 2xl:px-[20rem] flex flex-col gap-24 md:gap-32  lg:gap-48 xl:gap-25 ">
+        <div className=" px-6 sm:p-10 md:px-20 lg:px-40 xl:px-[12rem] 2xl:px-[20rem] flex flex-col gap-24  md:gap-32  lg:gap-48 xl:gap-25 ">
           <div className="flex flex-col xl:flex-row gap-24 md:gap-32 lg:gap-48 xl:gap-52 items-start xl:items-center">
             {/* Biography container */}
             <motion.div className="flex flex-col gap-12 justify-center">
               <motion.h1
                 className="font-bold text-2xl uppercase text-[#cace64]"
-                initial={{ x: '-100vw', opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1 }}
               >
                 Biography
               </motion.h1>
               <motion.p
                 className="flex justify-between md:text-lg"
-                initial={{ x: '-200vw', opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 1.5 }}
+                initial={{ y: '50vh', opacity: 0, scale: 0.5 }}
+                animate={{ y: 0, opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
               >
                 I love to create and find it comfortable and secure to work
                 within sensible guidelines or structures. Software development
@@ -114,9 +121,158 @@ const About = () => {
               </motion.p>
               <motion.p
                 className="flex justify-between md:text-lg"
-                initial={{ x: '-200vw' }}
-                animate={{ x: 0 }}
-                transition={{ delay: 1.5 }}
+                initial={{ y: '50vh', opacity: 0, scale: 0.5 }}
+                animate={{ y: 0, opacity: 1, scale: 1 }}
+                transition={{ delay: 1.5, duration: 0.5 }}
+              >
+                Therefore, it has become my passion, my hobby, and will be my
+                career.
+              </motion.p>
+              <motion.span
+                className="self-end"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.8, duration: 1, ease: 'easeInOut' }}
+              >
+                <Signature />
+              </motion.span>
+              <motion.div
+                initial={{ opacity: 0.2, y: 0 }}
+                animate={{ opacity: 1, y: '10px' }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: 'easeInOut',
+                }}
+                className="w-scren flex items-center justify-center"
+              >
+                <div className="block xl:hidden">
+                  <DownArrow width="30" />
+                </div>
+              </motion.div>
+            </motion.div>
+            {/* skill container */}
+            <div
+              className="flex flex-col gap-12 justify-between"
+              ref={skillMobileRef}
+            >
+              <motion.h1
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={isSkillMobileRefInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 1.2, duration: 0.5 }}
+                className="font-bold text-2xl uppercase text-[#cace64] "
+              >
+                Skills
+              </motion.h1>
+              {/* skill tags */}
+              <motion.div
+                className="flex gap-4 flex-wrap cursor-pointer "
+                initial={{ opacity: 0, y: '50vh', scale: 0.5 }}
+                animate={
+                  isSkillMobileRefInView ? { opacity: 1, y: 0, scale: 1 } : {}
+                }
+                transition={{ delay: 1.5, duration: 0.5 }}
+              >
+                {skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="rounded p-2 text-sm  bg-black text-white hover:bg-white hover:text-black font-semibold"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>{' '}
+          <div>
+            <DownArrow />
+          </div>
+          {/* experiences container */}
+          <motion.div
+            className="flex flex-col gap-12 justify-center pb-48  "
+            ref={experienceMobileRef}
+          >
+            <motion.h1
+              initial={{ y: '50vh', scale: 0.5, opacity: 0 }}
+              animate={
+                isExperienceMobileRefInView
+                  ? { y: 1, scale: 1, opacity: 1 }
+                  : {}
+              }
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="font-bold text-2xl uppercase text-[#cace64] "
+            >
+              Experience
+            </motion.h1>
+            {/* Experience list */}
+            <motion.div
+              className="flex flex-col gap-5 justify-center items-center"
+              initial={{ y: '50vh', scale: 0.5, opacity: 0 }}
+              animate={
+                isExperienceMobileRefInView
+                  ? { y: 0, scale: 1, opacity: 1 }
+                  : {}
+              }
+              transition={{ delay: 1.3, duration: 0.5 }}
+            >
+              {/* List items */}
+              {/* item one */}
+              <div className="flex justify-between  h-fit ">
+                {/* Left */}
+                <Experience experience={experiences[0]} />
+                {/* centre */}
+              </div>
+              {/* item two */}
+              <div className="flex justify-between md:h-48 h-fit ">
+                {/* Left */}
+
+                {/* right */}
+                <Experience experience={experiences[1]} />
+              </div>
+              {/* item three */}
+              <div className="flex justify-between   ">
+                {/* Left */}
+                <Experience experience={experiences[2]} />
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+      {/* desktop container */}
+      <div className="hidden h-full  pt-20 md:block ">
+        {/* text container */}
+        <div className=" px-6 sm:p-10 md:px-20 lg:px-40 xl:px-[12rem] 2xl:px-[20rem] flex flex-col gap-24 md:gap-32  lg:gap-48 xl:gap-25 ">
+          <div className="flex flex-col xl:flex-row gap-24 md:gap-32 lg:gap-48 xl:gap-52 items-start xl:items-center">
+            {/* Biography container */}
+            <motion.div className="flex flex-col gap-12 justify-center">
+              <motion.h1
+                className="font-bold text-2xl uppercase text-[#cace64]"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1 }}
+              >
+                Biography
+              </motion.h1>
+              <motion.p
+                className="flex justify-between md:text-lg"
+                initial={{ x: '-80vw', opacity: 0, scale: 0.5 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                transition={{ delay: 1.5, duration: 0.5 }}
+              >
+                I love to create and find it comfortable and secure to work
+                within sensible guidelines or structures. Software development
+                is in line with my spiritual order - to perform routine or
+                standardized tasks using creative thinking and problem-solving
+                skills. I feel grounded and joyful by adhering to the logical
+                constructs of programming languages while unleashing my
+                creativity. Experimenting with different approaches and
+                ultimately discovering solutions fills me with exhilaration.
+              </motion.p>
+              <motion.p
+                className="flex justify-between md:text-lg"
+                initial={{ x: '-80vw', opacity: 0, scale: 0.5 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                transition={{ delay: 1.8, duration: 0.5 }}
               >
                 Therefore, it has become my passion, my hobby, and will be my
                 career.
@@ -229,6 +385,9 @@ const About = () => {
             </motion.div>
           </motion.div>
         </div>
+      </div>
+      <div className="md:hidden">
+        <BackToTopButton />
       </div>
     </motion.div>
   )

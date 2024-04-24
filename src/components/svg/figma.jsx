@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Figma = () => {
+const Figma = ({ width = '28', height = '40' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="40"
+      width={width}
+      height={height}
       viewBox="0 0 120 170"
       fill="none"
     >

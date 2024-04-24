@@ -1,9 +1,9 @@
-const Website = () => {
+const Website = ({ width = '35', height = '35' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="35"
-      height="35"
+      width={width}
+      height={height}
       viewBox="0 0 180 180"
       fill="none"
     >

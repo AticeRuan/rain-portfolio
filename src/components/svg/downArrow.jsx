@@ -1,6 +1,6 @@
-import React from 'react'
+'use client'
 import { motion } from 'framer-motion'
-const DownArrow = () => {
+const DownArrow = ({ width = '50', height = '50' }) => {
   return (
     <motion.div
       initial={{ opacity: 0.2, y: 0 }}
@@ -14,8 +14,8 @@ const DownArrow = () => {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="50"
+        width={width}
+        height={height}
         viewBox="0 0 200 200"
         fill="white"
       >

@@ -11,6 +11,8 @@ import Figma from '@/components/svg/figma'
 import Github from '@/components/svg/github'
 import Website from '@/components/svg/website'
 import Youtube from '@/components/svg/youtube'
+import MobilePortfolio from '@/components/mobilePortfolio'
+import BackToTopButton from '@/components/backToTopButton'
 
 //portfolio data
 const developmentItems = [
@@ -270,290 +272,335 @@ const Portfolio = () => {
     else if (site === 'youtube') return <Youtube />
     else return null
   }
-
+  const smoothScroll = (e, id) => {
+    e.preventDefault()
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+  }
   return (
-    <motion.div
-      className="h-full"
-      initial={{ y: '-200vh' }}
-      animate={{ y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      {/* development */}
-      <div className="h-[600vh] relative" ref={sectionOneRef}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
-          <div className="flex flex-col ">
-            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5 md:mb-0">
-              Media Production
-            </h1>
-            <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
-              My works
-            </span>
-            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
-              Development
-            </h1>
-            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
-              Design
-            </h1>
-          </div>
-
-          <DownArrow />
-          <Raindrop />
-        </div>
-        {/* development mapping */}
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
-          <motion.div className="flex  z-50" style={{ x: sectionOneX }}>
-            <div
-              className={`h-screen w-screen flex items-start justify-start bg-gradient-to-r from-purple-300 to-red-300`}
-            ></div>
-            {developmentItems.map((item) => (
-              <div
-                className={`min-h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color} `}
-                style={{ x: sectionOneX }}
-                key={item.id}
+    <>
+      <motion.div
+        className="h-full  hidden md:block"
+        initial={{ y: '-200vh' }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        {/* development */}
+        <div className="h-[600vh] relative" ref={sectionOneRef} id="dev">
+          <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
+            <div className="flex flex-col ">
+              <Link
+                href="/portfolio/#media"
+                onClick={(e) => smoothScroll(e, 'media')}
               >
-                <div className="flex flex-col gap-8 text-white">
-                  {/* title */}{' '}
-                  <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
-                    Development
-                  </span>
-                  <h1 className="text-xl  md:text-4xl lg:text-6xl xl:text-7xl font-bold ">
-                    {item.title}
-                  </h1>
-                  <div className="relateive">
-                    <div className="flex flex-col xl:flex-row xl:gap-20">
-                      <div>
-                        {/* image */}
-                        <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                          <Image src={item.img} alt="" fill />
+                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5 md:mb-0">
+                  Media Production
+                </h1>
+              </Link>
+              <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
+                My works
+              </span>
+              <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
+                Development
+              </h1>{' '}
+              <Link
+                href="/portfolio/#des"
+                onClick={(e) => smoothScroll(e, 'des')}
+              >
+                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+                  Design
+                </h1>
+              </Link>
+            </div>
+
+            <DownArrow />
+            <Raindrop />
+          </div>
+          {/* development mapping */}
+          <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
+            <motion.div className="flex  z-50" style={{ x: sectionOneX }}>
+              <div
+                className={`h-screen w-screen flex items-start justify-start bg-gradient-to-r from-purple-300 to-red-300`}
+              ></div>
+              {developmentItems.map((item) => (
+                <div
+                  className={`min-h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color} `}
+                  style={{ x: sectionOneX }}
+                  key={item.id}
+                >
+                  <div className="flex flex-col gap-8 text-white">
+                    {/* title */}{' '}
+                    <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
+                      Development
+                    </span>
+                    <h1 className="text-xl  md:text-4xl lg:text-6xl xl:text-7xl font-bold ">
+                      {item.title}
+                    </h1>
+                    <div className="relateive">
+                      <div className="flex flex-col xl:flex-row xl:gap-20">
+                        <div>
+                          {/* image */}
+                          <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                            <Image src={item.img} alt="" fill />
+                          </div>
+                          {/* hashtag */}
+                          <p className="font-bold mt-3 text-sm md:text-xl text-red-500">
+                            {item.hashtag && item.hashtag}
+                          </p>{' '}
+                          {/* link */}
+                          <div className="flex items-center justify-start gap-4 text-white mt-2 md:mt-6 ">
+                            {item.link &&
+                              Array.isArray(item.link) &&
+                              item.link.map((link) => (
+                                <Link
+                                  href={link.url}
+                                  key={link.url}
+                                  className="flex justify-end items-center"
+                                >
+                                  {renderIconByLink(link.site)}
+                                </Link>
+                              ))}
+                          </div>{' '}
                         </div>
-                        {/* hashtag */}
-                        <p className="font-bold mt-3 text-sm md:text-xl text-red-500">
-                          {item.hashtag && item.hashtag}
-                        </p>{' '}
-                        {/* link */}
-                        <div className="flex items-center justify-start gap-4 text-white mt-2 md:mt-6 ">
-                          {item.link &&
-                            Array.isArray(item.link) &&
-                            item.link.map((link) => (
-                              <Link
-                                href={link.url}
-                                key={link.url}
-                                className="flex justify-end items-center"
+                        <div className="flex flex-col items-start">
+                          {/* description */}{' '}
+                          <div className="flex gap-4 flex-wrap cursor-pointer mt-4 md:mt-10 w-[80vw] md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px]">
+                            {item.skills.map((skill, index) => (
+                              <div
+                                key={index}
+                                className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
                               >
-                                {renderIconByLink(link.site)}
-                              </Link>
+                                {skill}
+                              </div>
                             ))}
-                        </div>{' '}
-                      </div>
-                      <div className="flex flex-col items-start">
-                        {/* description */}{' '}
-                        <div className="flex gap-4 flex-wrap cursor-pointer mt-4 md:mt-10 w-[80vw] md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px]">
-                          {item.skills.map((skill, index) => (
-                            <div
-                              key={index}
-                              className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
-                            >
-                              {skill}
-                            </div>
-                          ))}
+                          </div>
+                          <p className="w-80 md:w-96 lg:w-[500px]  lg:text-xl  xl:w-[600px] mt-8 text-slate-800 text-xs md:text-sm">
+                            {item.desc}
+                          </p>
                         </div>
-                        <p className="w-80 md:w-96 lg:w-[500px]  lg:text-xl  xl:w-[600px] mt-8 text-slate-800 text-xs md:text-sm">
-                          {item.desc}
-                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>{' '}
         </div>{' '}
-      </div>{' '}
-      {/* design */}
-      <div className="h-[600vh] relative" ref={sectionTwoRef}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
-          <div className="flex flex-col ">
-            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5">
-              Development
-            </h1>
-            <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
-              My works
-            </span>
-            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
-              Design
-            </h1>
-            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
-              Media Production
-            </h1>
-          </div>
-
-          <DownArrow />
-        </div>
-        {/* design mapping */}
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
-          <motion.div className="flex" style={{ x: sectionTwoX }}>
-            <div
-              className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
-            ></div>
-            {designItems.map((item) => (
-              <div
-                className={`h-screen w-screen flex  bg-gradient-to-r ${item.color} items-center justify-center `}
-                style={{ x: sectionOneX }}
-                key={item.id}
+        {/* design */}
+        <div className="h-[600vh] relative" ref={sectionTwoRef} id="des">
+          <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
+            <div className="flex flex-col ">
+              <Link
+                href="/portfolio/#dev"
+                onClick={(e) => smoothScroll(e, 'dev')}
               >
-                <div className="flex flex-col gap-8 text-white  ">
-                  {/* title */}
-                  <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] ">
-                    Design
-                  </span>
-                  <h1 className=" text-xl font-bold md:text-4xl lg:text-6xl xl:text-7xl w-[80vw]">
-                    {item.title}
-                  </h1>
+                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5">
+                  Development
+                </h1>
+              </Link>
+              <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
+                My works
+              </span>
+              <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
+                Design
+              </h1>
+              <Link
+                href="/portfolio/#media"
+                onClick={(e) => smoothScroll(e, 'media')}
+              >
+                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+                  Media Production
+                </h1>
+              </Link>
+            </div>
 
-                  <div className="relateive">
-                    <div className="flex flex-col xl:flex-row xl:gap-20">
-                      <div>
-                        {/* image */}
-                        <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                          <Image src={item.img} alt="" fill />
+            <DownArrow />
+          </div>
+          {/* design mapping */}
+          <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
+            <motion.div className="flex" style={{ x: sectionTwoX }}>
+              <div
+                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
+              ></div>
+              {designItems.map((item) => (
+                <div
+                  className={`h-screen w-screen flex  bg-gradient-to-r ${item.color} items-center justify-center `}
+                  style={{ x: sectionOneX }}
+                  key={item.id}
+                >
+                  <div className="flex flex-col gap-8 text-white  ">
+                    {/* title */}
+                    <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] ">
+                      Design
+                    </span>
+                    <h1 className=" text-xl font-bold md:text-4xl lg:text-6xl xl:text-7xl w-[80vw]">
+                      {item.title}
+                    </h1>
+
+                    <div className="relateive">
+                      <div className="flex flex-col xl:flex-row xl:gap-20">
+                        <div>
+                          {/* image */}
+                          <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                            <Image src={item.img} alt="" fill />
+                          </div>
+                          {/* hashtag */}
+                          <p className="font-bold mt-3 text-xl text-red-500">
+                            {item.hashtag && item.hashtag}
+                          </p>{' '}
+                          {/* link */}
+                          <div className="flex items-center justify-start gap-4 text-white mt-6 ">
+                            {item.link &&
+                              Array.isArray(item.link) &&
+                              item.link.map((link) => (
+                                <Link
+                                  href={link.url}
+                                  key={link.url}
+                                  className="flex justify-end items-center"
+                                >
+                                  {renderIconByLink(link.site)}
+                                </Link>
+                              ))}
+                          </div>{' '}
                         </div>
-                        {/* hashtag */}
-                        <p className="font-bold mt-3 text-xl text-red-500">
-                          {item.hashtag && item.hashtag}
-                        </p>{' '}
-                        {/* link */}
-                        <div className="flex items-center justify-start gap-4 text-white mt-6 ">
-                          {item.link &&
-                            Array.isArray(item.link) &&
-                            item.link.map((link) => (
-                              <Link
-                                href={link.url}
-                                key={link.url}
-                                className="flex justify-end items-center"
+                        <div className="flex flex-col items-start">
+                          {/* description */}{' '}
+                          <div className="flex gap-4 flex-wrap cursor-pointer mt-6 md:mt-10 w-80 md:w-96 lg:w-[500px] lg:text-xl text-sm xl:w-[600px]">
+                            {item.skills.map((skill, index) => (
+                              <div
+                                key={index}
+                                className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
                               >
-                                {renderIconByLink(link.site)}
-                              </Link>
+                                {skill}
+                              </div>
                             ))}
-                        </div>{' '}
-                      </div>
-                      <div className="flex flex-col items-start">
-                        {/* description */}{' '}
-                        <div className="flex gap-4 flex-wrap cursor-pointer mt-6 md:mt-10 w-80 md:w-96 lg:w-[500px] lg:text-xl text-sm xl:w-[600px]">
-                          {item.skills.map((skill, index) => (
-                            <div
-                              key={index}
-                              className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
-                            >
-                              {skill}
-                            </div>
-                          ))}
+                          </div>
+                          <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl text-xs  xl:w-[600px] mt-8 text-slate-800">
+                            {item.desc}
+                          </p>
                         </div>
-                        <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl text-xs  xl:w-[600px] mt-8 text-slate-800">
-                          {item.desc}
-                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>{' '}
-      </div>
-      {/* media */}
-      <div className="h-[600vh] relative" ref={sectionThreeRef}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
-          <div className="flex flex-col ">
-            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-3 md:mb-5">
-              Design
-            </h1>
-            <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
-              My works
-            </span>
-            <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
-              Media Production
-            </h1>
-            <h1 className="font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
-              Development
-            </h1>
-          </div>
-
-          <DownArrow />
+              ))}
+            </motion.div>
+          </div>{' '}
         </div>
-        {/* media mapping */}
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden ">
-          <motion.div className="flex" style={{ x: sectionThreeX }}>
-            <div
-              className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
-            ></div>
-
-            {mediaItems.map((item) => (
-              <div
-                className={`h-screen w-screen flex items-center justify-center  bg-gradient-to-r ${item.color}`}
-                style={{ x: sectionOneX }}
-                key={item.id}
+        {/* media */}
+        <div className="h-[600vh] relative" ref={sectionThreeRef} id="media">
+          <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-2 items-center justify-center text-8xl text-center">
+            <div className="flex flex-col ">
+              <Link
+                href="/portfolio/#des"
+                onClick={(e) => smoothScroll(e, 'des')}
               >
-                <div className="flex flex-col gap-8 text-white ">
-                  {/* title */}{' '}
-                  <span className="text-[.8rem] md:text-sm lg:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
-                    Media Production
-                  </span>
-                  <h1 className="text-xl w-[80vw] font-bold md:text-4xl lg:text-6xl xl:text-7xl ">
-                    {item.title}
-                  </h1>
-                  <div className="relateive">
-                    <div className="flex flex-col xl:flex-row xl:gap-20">
-                      <div>
-                        {/* video */}
-                        <div className="relative ">
-                          <iframe
-                            className="w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]"
-                            src={item.link}
-                          ></iframe>
+                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-3 md:mb-5">
+                  Design
+                </h1>
+              </Link>
+              <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
+                My works
+              </span>
+              <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
+                Media Production
+              </h1>
+              <Link
+                href="/portfolio/#dev"
+                onClick={(e) => smoothScroll(e, 'dev')}
+              >
+                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+                  Development
+                </h1>
+              </Link>
+            </div>
+
+            <DownArrow />
+          </div>
+          {/* media mapping */}
+          <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden ">
+            <motion.div className="flex" style={{ x: sectionThreeX }}>
+              <div
+                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
+              ></div>
+
+              {mediaItems.map((item) => (
+                <div
+                  className={`h-screen w-screen flex items-center justify-center  bg-gradient-to-r ${item.color}`}
+                  style={{ x: sectionOneX }}
+                  key={item.id}
+                >
+                  <div className="flex flex-col gap-8 text-white ">
+                    {/* title */}{' '}
+                    <span className="text-[.8rem] md:text-sm lg:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
+                      Media Production
+                    </span>
+                    <h1 className="text-xl w-[80vw] font-bold md:text-4xl lg:text-6xl xl:text-7xl ">
+                      {item.title}
+                    </h1>
+                    <div className="relateive">
+                      <div className="flex flex-col xl:flex-row xl:gap-20">
+                        <div>
+                          {/* video */}
+                          <div className="relative ">
+                            <iframe
+                              className="w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]"
+                              src={item.link}
+                            ></iframe>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex flex-col items-start">
-                        {/* description */}{' '}
-                        <div className="flex gap-4 flex-wrap cursor-pointer mt-10 w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px]">
-                          {item.skills.map((skill, index) => (
-                            <div
-                              key={index}
-                              className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
-                            >
-                              {skill}
-                            </div>
-                          ))}
+                        <div className="flex flex-col items-start">
+                          {/* description */}{' '}
+                          <div className="flex gap-4 flex-wrap cursor-pointer mt-10 w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px]">
+                            {item.skills.map((skill, index) => (
+                              <div
+                                key={index}
+                                className="rounded p-2 text-xs md:text-sm  bg-black text-[#cace64] hover:bg-white hover:text-black font-semibold"
+                              >
+                                {skill}
+                              </div>
+                            ))}
+                          </div>
+                          <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px] mt-8 text-slate-800 text-xs">
+                            {item.desc}
+                          </p>
                         </div>
-                        <p className="w-80 md:w-96 lg:w-[500px] lg:text-xl  xl:w-[600px] mt-8 text-slate-800 text-xs">
-                          {item.desc}
-                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>{' '}
-      </div>
-      <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="text-4xl mx-10 md:text-7xl font-bold ">
-          Let&apos;s talk about your project!
-        </h1>
-        <div className="relative">
-          <div className="">
-            <Circle />
-          </div>
-          <button></button>
-          <Link
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-[#cace64] rounded-full font-bold flex items-center justify-center z-30"
-            href="/contact"
-          >
-            <button>Email me</button>
-          </Link>
+              ))}
+            </motion.div>
+          </div>{' '}
         </div>
-      </div>
-    </motion.div>
+        {/* last screen */}
+        <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
+          <h1 className="text-4xl mx-10 md:text-7xl font-bold ">
+            Let&apos;s talk about your project!
+          </h1>
+          <div className="relative">
+            <div className="">
+              <Circle />
+            </div>
+            <button></button>
+            <Link
+              className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-[#cace64] rounded-full font-bold flex items-center justify-center z-30"
+              href="/contact"
+            >
+              <button>Email me</button>
+            </Link>
+          </div>
+        </div>
+        <BackToTopButton />{' '}
+      </motion.div>
+      <motion.div
+        className="h-full  block "
+        initial={{ y: '-200vh' }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <MobilePortfolio />
+      </motion.div>
+    </>
   )
 }
 

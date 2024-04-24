@@ -2,7 +2,7 @@ import React from 'react'
 
 const Experience = ({ experience }) => {
   return (
-    <div className="w-1/3 ">
+    <div className="w-[80vw] md:w-1/3 ">
       {/* JOB TITLE */}
       <div className="bg-white p-3 font-semibold text-black  rounded-lg md:text-base text-sm w-fit">
         {experience.title}
@@ -21,6 +21,7 @@ const Experience = ({ experience }) => {
       <div className="p-1 rounded bg-white text-[0.8rem] font-semibold w-fit text-black">
         {experience.company}
       </div>
+      <hr className="text-white mt-5 mb-5 md:hidden"></hr>
     </div>
   )
 }

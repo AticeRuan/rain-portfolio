@@ -21,12 +21,12 @@ const Homepage = () => {
 
   return (
     <motion.div
-      className="h-full"
+      className="h-full "
       initial={{ y: '-200vh' }}
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="flex flex-col h-full justify-center items-center">
+      <div className="flex flex-col h-full justify-center items-center ">
         {/* wrapper */}
         <motion.div
           className="relative h-screen "

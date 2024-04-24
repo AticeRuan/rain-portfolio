@@ -78,7 +78,7 @@ const Navbar = () => {
         ))}
       </div>
       {/* logo */}
-      <div className="md:hidden lg:flex lg:w-1/4 xl:justify-center ml-0 md:m-20 fixed top-5 left-4 lg:static">
+      <div className="md:hidden lg:flex lg:w-1/4 xl:justify-center ml-0 md:m-20 top-5 left-4 ">
         <Link
           href="/"
           className="hidden md:flex text-sm bg-black rounded-md p-1 font-semibold  items-center justify-center"
@@ -93,7 +93,7 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Social links */}
-      <div className="hidden md:flex text-xs gap-4 items-center justify-center w-1/3">
+      <div className="hidden lg:flex text-xs gap-4 items-center justify-center w-1/3">
         <Link href="https://github.com/AticeRuan">
           <Github />
         </Link>
@@ -102,6 +102,17 @@ const Navbar = () => {
         </Link>
         <Link href="mailto:rainryy@gmail.com">
           <Email />
+        </Link>
+      </div>
+      <div className="hidden md:flex lg:hidden text-xs gap-2 items-center justify-end w-1/3">
+        <Link href="https://github.com/AticeRuan">
+          <Github width="20" height="auto" />
+        </Link>
+        <Link href="https://www.linkedin.com/in/rain-ruan/">
+          <LinkedIn width="25" height="auto" />
+        </Link>
+        <Link href="mailto:rainryy@gmail.com">
+          <Email width="25" height="auto" />
         </Link>
       </div>
       {/* Responsive menu */}

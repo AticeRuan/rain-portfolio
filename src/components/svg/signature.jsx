@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Signature = () => {
+const Signature = ({ width = '137.5', height = '50' }) => {
   return (
     <svg
-      width="137.5"
-      height="50"
+      width={width}
+      height={height}
       viewBox="0 0 553 199"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
