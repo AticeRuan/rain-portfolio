@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Close } from './svg/expand'
+import { color } from 'framer-motion'
 
-const BackToTopButton = () => {
+const BackToTopButton = ({ bgcolor = '#cace64' }) => {
   const [isVisible, setIsVisible] = useState(false)
 
   const handleScroll = () => {
@@ -37,7 +38,7 @@ const BackToTopButton = () => {
       style={{
         display: isVisible ? 'block' : 'none',
       }}
-      className="fixed bottom-4 right-4 w-fit h-fit p-1 bg-[#cace64] opacity-70 rounded-full flex flex-col items-center justify-center z-50 "
+      className={`fixed bottom-4 md:bottom-11 md:right-11 right-4 w-fit h-fit p-2 md:p-4 shadow-lg hover:shadow-2xl opacity-70 rounded-full flex flex-col items-center justify-center z-50 bg-[${bgcolor}]`}
     >
       <Close />
     </button>

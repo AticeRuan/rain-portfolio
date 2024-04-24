@@ -323,7 +323,7 @@ const Portfolio = () => {
               ></div>
               {developmentItems.map((item) => (
                 <div
-                  className={`min-h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color} `}
+                  className={`min-h-screen  w-screen flex items-center justify-center bg-gradient-to-r ${item.color} `}
                   style={{ x: sectionOneX }}
                   key={item.id}
                 >
@@ -590,7 +590,7 @@ const Portfolio = () => {
             </Link>
           </div>
         </div>
-        <BackToTopButton />{' '}
+        <BackToTopButton bgcolor="#6b6b6b" />{' '}
       </motion.div>
       <motion.div
         className="h-full  block "

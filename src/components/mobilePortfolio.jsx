@@ -8,6 +8,7 @@ import DownArrow from './svg/downArrow'
 import Image from 'next/image'
 import Link from 'next/link'
 import Circle from './svg/circle'
+import BackToTopButton from './backToTopButton'
 const MobilePortfolio = () => {
   const developmentItems = [
     {
@@ -485,6 +486,7 @@ const MobilePortfolio = () => {
           </Link>
         </div>
       </div>
+      <BackToTopButton bgcolor="transparent" />
     </>
   )
 }

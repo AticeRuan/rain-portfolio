@@ -147,7 +147,7 @@ const About = () => {
                 className="w-scren flex items-center justify-center"
               >
                 <div className="block xl:hidden">
-                  <DownArrow width="30" />
+                  <DownArrow width="30" height="auto" />
                 </div>
               </motion.div>
             </motion.div>
