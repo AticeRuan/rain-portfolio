@@ -116,14 +116,15 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Responsive menu */}
-      <div className=" md:hidden">
+      <div className=" md:hidden ">
         {/* hamburger */}
+
         <button
-          className="w-10 h-8 flex flex-col justify-between z-50 fixed top-4 right-4 "
+          className="w-10 h-8 flex flex-col justify-between  z-50 fixed top-4 right-4 "
           onClick={() => setOpen((prev) => !prev)}
         >
           <motion.div
-            className="w-10 h-1 bg-black rounded origin-left"
+            className="w-10 h-1 bg-black rounded origin-left "
             variants={topVariants}
             animate={open ? 'open' : 'closed'}
           ></motion.div>
@@ -138,6 +139,7 @@ const Navbar = () => {
             animate={open ? 'open' : 'closed'}
           ></motion.div>
         </button>
+
         {/* menu list */}
         {open && (
           <motion.div

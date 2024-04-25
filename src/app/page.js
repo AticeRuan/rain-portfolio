@@ -54,7 +54,7 @@ const Homepage = () => {
               >
                 {' '}
                 <div className={nicone.className}>
-                  <p className="text-[#E6F14A] text-5xl md:text-[7rem] sm:text-8xl lg:text-[8rem] xl:text-[10rem]  2xl:text-[13rem] whitespace-nowrap">
+                  <p className="text-[#E6F14A] text-7xl md:text-[7rem] sm:text-8xl lg:text-[8rem] xl:text-[10rem]  2xl:text-[13rem] whitespace-nowrap ">
                     Rain Ruan{' '}
                   </p>
                 </div>

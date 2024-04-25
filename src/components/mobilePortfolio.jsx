@@ -236,6 +236,7 @@ const MobilePortfolio = () => {
   const smoothScroll = (e, id) => {
     e.preventDefault()
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+    console.log('clicked')
   }
   return (
     <>
@@ -469,7 +470,7 @@ const MobilePortfolio = () => {
         </div>
       </div>
       {/* last screen */}
-      <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
+      <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center md:hidden">
         <h1 className="text-4xl mx-10 md:text-7xl font-bold ">
           Let&apos;s talk about your project!
         </h1>
