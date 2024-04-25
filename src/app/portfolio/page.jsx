@@ -327,7 +327,7 @@ const Portfolio = () => {
                   style={{ x: sectionOneX }}
                   key={item.id}
                 >
-                  <div className="flex flex-col gap-8 text-white">
+                  <div className="flex flex-col gap-8 text-white drop-shadow-2xl">
                     {/* title */}{' '}
                     <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
                       Development
@@ -339,7 +339,7 @@ const Portfolio = () => {
                       <div className="flex flex-col xl:flex-row xl:gap-20">
                         <div>
                           {/* image */}
-                          <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                          <div className="relative w-80 h-56 rounded-2xl overflow-clip drop-shadow-lg  md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
                             <Image src={item.img} alt="" fill />
                           </div>
                           {/* hashtag */}
@@ -427,7 +427,7 @@ const Portfolio = () => {
                   style={{ x: sectionOneX }}
                   key={item.id}
                 >
-                  <div className="flex flex-col gap-8 text-white  ">
+                  <div className="flex flex-col gap-8 text-white drop-shadow-2xl ">
                     {/* title */}
                     <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] ">
                       Design
@@ -440,7 +440,7 @@ const Portfolio = () => {
                       <div className="flex flex-col xl:flex-row xl:gap-20">
                         <div>
                           {/* image */}
-                          <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
+                          <div className="relative w-80 h-56  md:w-96 rounded-2xl overflow-clip drop-shadow-lg md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
                             <Image src={item.img} alt="" fill />
                           </div>
                           {/* hashtag */}
@@ -529,7 +529,7 @@ const Portfolio = () => {
                   style={{ x: sectionOneX }}
                   key={item.id}
                 >
-                  <div className="flex flex-col gap-8 text-white ">
+                  <div className="flex flex-col gap-8 text-white drop-shadow-2xl ">
                     {/* title */}{' '}
                     <span className="text-[.8rem] md:text-sm lg:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
                       Media Production
@@ -541,7 +541,7 @@ const Portfolio = () => {
                       <div className="flex flex-col xl:flex-row xl:gap-20">
                         <div>
                           {/* video */}
-                          <div className="relative ">
+                          <div className="relative rounded-2xl overflow-clip drop-shadow-lg">
                             <iframe
                               className="w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]"
                               src={item.link}

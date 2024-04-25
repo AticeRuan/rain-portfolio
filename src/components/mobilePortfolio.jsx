@@ -266,19 +266,19 @@ const MobilePortfolio = () => {
         </div>
         <div className="h-auto  flex flex-col gap-20 w-80 ">
           {developmentItems.map((item) => (
-            // /* design items mapping start */
+            // /* dev items mapping start */
             <div
               key={item.id}
               className="flex flex-col justify-center items-start gap-4  "
             >
               {/* image and title */}
-              <div className="relative w-80 h-56 rounded-lg overflow-clip">
-                <div className="group ">
+              <div className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl">
+                <div className="group w-80 h-56 ">
                   <Image
                     src={item.img}
                     alt=""
                     fill
-                    className="hover:filter-none filter brightness-50"
+                    className="hover:filter-none filter brightness-50 relative"
                   />
                   {/* title */}
                   <h1 className="absolute top-[6rem] px-2 text-2xl font-bold bg-[rgba(0,0,0,0.5)] opacity-90 group-hover:hidden transition-opacity">
@@ -356,8 +356,8 @@ const MobilePortfolio = () => {
               className="flex flex-col justify-center items-start gap-4  "
             >
               {/* image and title */}
-              <div className="relative w-80 h-56 rounded-lg overflow-clip">
-                <div className="group ">
+              <div className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl">
+                <div className="group relative w-80 h-56">
                   <Image
                     src={item.img}
                     alt=""
@@ -437,7 +437,7 @@ const MobilePortfolio = () => {
               className="flex flex-col justify-center items-start gap-4  "
             >
               {/* image and title */}
-              <div className="relative w-80 h-56 rounded-lg overflow-clip">
+              <div className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl">
                 <div className="group ">
                   <iframe
                     className="hover:filter-none filter brightness-50 w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]"
