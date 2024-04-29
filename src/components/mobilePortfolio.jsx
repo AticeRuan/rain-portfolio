@@ -1,5 +1,5 @@
-import React from 'react'
-
+'use client'
+import { useState } from 'react'
 import Figma from '@/components/svg/figma'
 import Github from '@/components/svg/github'
 import Website from '@/components/svg/website'
@@ -10,6 +10,16 @@ import Link from 'next/link'
 import Circle from './svg/circle'
 import BackToTopButton from './backToTopButton'
 import { Barlow } from 'next/font/google'
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+} from '@nextui-org/react'
+
 const barlow = Barlow({ subsets: ['latin'], weight: ['200', '400', '600'] })
 const MobilePortfolio = () => {
   const developmentItems = [
@@ -238,8 +248,15 @@ const MobilePortfolio = () => {
   const smoothScroll = (e, id) => {
     e.preventDefault()
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
-    console.log('clicked')
   }
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
+  const [selectedItem, setSelectedItem] = useState(null)
+  const handleItemOpen = (item) => {
+    setSelectedItem(item)
+    onOpen()
+  }
+
   return (
     <>
       {/* Development */}
@@ -281,7 +298,10 @@ const MobilePortfolio = () => {
             >
               {/* image and title */}
               <div className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl">
-                <div className="group w-80 h-56 ">
+                <div
+                  className="group w-80 h-56 "
+                  onClick={() => handleItemOpen(item)}
+                >
                   <Image
                     src={item.img}
                     alt=""
@@ -289,7 +309,7 @@ const MobilePortfolio = () => {
                     className="hover:filter-none filter brightness-50 relative"
                   />
                   {/* title */}
-                  <h1 className="absolute top-[6rem] px-2 text-2xl font-bold bg-[rgba(0,0,0,0.5)] opacity-90 group-hover:hidden transition-opacity">
+                  <h1 className="absolute top-[6rem] px-2 text-2xl font-bold bg-[rgba(0,0,0,0.5)] opacity-90 group-hover:hidden transition-opacity text-white">
                     {item.title}
                   </h1>
                   <span className="absolute top-[.5rem] left-[.5rem] text-sm md:text-lg bg-black rounded-b-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] ">
@@ -301,6 +321,43 @@ const MobilePortfolio = () => {
               <h1 className="text-red-600 font-bold">
                 {item.hashtag && item.hashtag}
               </h1>
+              {/* desc */}
+              <Modal
+                isOpen={isOpen}
+                placement="bottom"
+                onOpenChange={onOpenChange}
+                backdrop="blur"
+              >
+                <ModalContent>
+                  {() => (
+                    <>
+                      <ModalHeader className="flex flex-col gap-1">
+                        {selectedItem.title}
+                      </ModalHeader>
+                      <ModalBody>
+                        {selectedItem.desc && selectedItem.desc}
+                      </ModalBody>
+                      <div className="flex items-center  justify-start gap-4  ">
+                        <ModalFooter>
+                          {/* links */}
+
+                          {selectedItem.link &&
+                            Array.isArray(selectedItem.link) &&
+                            selectedItem.link.map((link) => (
+                              <Link
+                                href={link.url}
+                                key={link.url}
+                                className="flex justify-end items-center gap-4"
+                              >
+                                {renderIconByLink(link.site)}
+                              </Link>
+                            ))}
+                        </ModalFooter>{' '}
+                      </div>{' '}
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
               {/* skills */}{' '}
               <div className="flex flex-wrap justify-start gap-2 ">
                 {item.skills.map((skill, index) => (
@@ -311,20 +368,6 @@ const MobilePortfolio = () => {
                     {skill}
                   </div>
                 ))}
-              </div>{' '}
-              {/* links */}
-              <div className="flex items-center justify-start gap-4  ">
-                {item.link &&
-                  Array.isArray(item.link) &&
-                  item.link.map((link) => (
-                    <Link
-                      href={link.url}
-                      key={link.url}
-                      className="flex justify-end items-center"
-                    >
-                      {renderIconByLink(link.site)}
-                    </Link>
-                  ))}
               </div>{' '}
             </div>
           ))}
@@ -368,8 +411,11 @@ const MobilePortfolio = () => {
               className="flex flex-col justify-center items-start gap-4  "
             >
               {/* image and title */}
-              <div className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl">
-                <div className="group relative w-80 h-56">
+              <div className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl ">
+                <div
+                  className="group relative w-80 h-56 cursor-pointer "
+                  onClick={() => handleItemOpen(item)}
+                >
                   <Image
                     src={item.img}
                     alt=""
@@ -377,7 +423,7 @@ const MobilePortfolio = () => {
                     className="hover:filter-none filter brightness-50"
                   />
                   {/* title */}
-                  <h1 className="absolute top-[6rem] px-2 text-2xl font-bold bg-[rgba(0,0,0,0.5)] opacity-90 group-hover:hidden transition-opacity">
+                  <h1 className="absolute top-[6rem] px-2 text-2xl font-bold bg-[rgba(0,0,0,0.5)] opacity-90 group-hover:hidden transition-opacity  text-white">
                     {item.title}
                   </h1>
                   <span className="absolute top-[.5rem] left-[.5rem] text-sm md:text-lg bg-black rounded-b-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] ">
@@ -385,6 +431,43 @@ const MobilePortfolio = () => {
                   </span>
                 </div>
               </div>
+              {/* desc */}
+              <Modal
+                isOpen={isOpen}
+                placement="bottom"
+                onOpenChange={onOpenChange}
+                backdrop="blur"
+              >
+                <ModalContent>
+                  {() => (
+                    <>
+                      <ModalHeader className="flex flex-col gap-1">
+                        {selectedItem.title}
+                      </ModalHeader>
+                      <ModalBody>
+                        {selectedItem.desc && selectedItem.desc}
+                      </ModalBody>
+                      <div className="flex items-center  justify-start gap-4  ">
+                        <ModalFooter>
+                          {/* links */}
+
+                          {selectedItem.link &&
+                            Array.isArray(selectedItem.link) &&
+                            selectedItem.link.map((link) => (
+                              <Link
+                                href={link.url}
+                                key={link.url}
+                                className="flex justify-end items-center gap-4"
+                              >
+                                {renderIconByLink(link.site)}
+                              </Link>
+                            ))}
+                        </ModalFooter>{' '}
+                      </div>{' '}
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
               {/* hashtag */}
               <h1 className="text-red-600 font-bold">
                 {item.hashtag && item.hashtag}
@@ -399,20 +482,6 @@ const MobilePortfolio = () => {
                     {skill}
                   </div>
                 ))}
-              </div>{' '}
-              {/* links */}
-              <div className="flex items-center justify-start gap-4  ">
-                {item.link &&
-                  Array.isArray(item.link) &&
-                  item.link.map((link) => (
-                    <Link
-                      href={link.url}
-                      key={link.url}
-                      className="flex justify-end items-center"
-                    >
-                      {renderIconByLink(link.site)}
-                    </Link>
-                  ))}
               </div>{' '}
             </div>
           ))}
@@ -453,7 +522,10 @@ const MobilePortfolio = () => {
               className="flex flex-col justify-center items-start gap-4  "
             >
               {/* image and title */}
-              <div className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl">
+              <div
+                className="relative w-80 h-56 rounded-lg overflow-clip drop-shadow-xl"
+                onClick={() => handleItemOpen(item)}
+              >
                 <div className="group ">
                   <iframe
                     className="hover:filter-none filter brightness-50 w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]"
@@ -461,7 +533,7 @@ const MobilePortfolio = () => {
                   ></iframe>
 
                   {/* title */}
-                  <h1 className="absolute top-[6rem] px-2 text-2xl font-bold bg-[rgba(0,0,0,0.5)] opacity-90 group-hover:hidden transition-opacity">
+                  <h1 className="absolute top-[6rem] px-2 text-2xl font-bold bg-[rgba(0,0,0,0.5)] opacity-90 group-hover:hidden transition-opacity  text-white">
                     {item.title}
                   </h1>
                   <span className="absolute top-[.1rem] left-[.1rem] text-sm md:text-lg bg-black rounded-b-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] group-hover:hidden ">
@@ -469,6 +541,29 @@ const MobilePortfolio = () => {
                   </span>
                 </div>
               </div>
+              {/* desc */}
+              <Modal
+                isOpen={isOpen}
+                placement="bottom"
+                onOpenChange={onOpenChange}
+                backdrop="blur"
+              >
+                <ModalContent>
+                  {() => (
+                    <>
+                      <ModalHeader className="flex flex-col gap-1">
+                        {selectedItem.title}
+                      </ModalHeader>
+                      <ModalBody>
+                        {selectedItem.desc && selectedItem.desc}
+                      </ModalBody>
+                      <div className="flex items-center  justify-start gap-4  ">
+                        <ModalFooter>{/* links */}</ModalFooter>{' '}
+                      </div>{' '}
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
               {/* skills */}{' '}
               <div className="flex flex-wrap justify-start gap-2 ">
                 {item.skills.map((skill, index) => (
