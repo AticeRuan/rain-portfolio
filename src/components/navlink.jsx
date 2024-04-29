@@ -8,7 +8,7 @@ const NavLink = ({ link }) => {
   return (
     <Link
       href={link.url}
-      className="relative px-5 py-3 overflow font-bold  bg-tranparent border-none hover:border border-gray-100 rounded-lg shadow-inner group "
+      className="relative px-5 py-3 overflow font-bold  bg-tranparent border-none hover:border border-gray-100 rounded-lg  group "
     >
       <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease rounded-lg"></span>
       <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-none hover:border-b-2 border-gray-600 group-hover:w-full ease  rounded-lg"></span>

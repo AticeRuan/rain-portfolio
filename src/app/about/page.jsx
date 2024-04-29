@@ -277,13 +277,21 @@ const About = () => {
           >
             I love to create
           </motion.p>
-          <div className="flex gap-6">
+          <motion.div
+            className="flex gap-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 1.2,
+              duration: 1,
+            }}
+          >
             <motion.div
-              initial={{ scale: 1, opacity: 0 }}
-              animate={{ scale: 1.1, opacity: 1 }}
-              exit={{ scale: 1, opacity: 0.5 }}
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.1 }}
+              exit={{ scale: 1 }}
               transition={{
-                delay: 2.4,
+                delay: 1.6,
                 duration: 3,
                 repeat: Infinity,
                 ease: 'easeInOut',
@@ -292,11 +300,11 @@ const About = () => {
               className=" h-[calc(50vw/3)] w-[calc(80vw/3)] bg-[url('/assets/handdrawing01.png')] bg-cover origin-center"
             ></motion.div>
             <motion.div
-              initial={{ scale: 1, opacity: 0 }}
-              animate={{ scale: 1.1, opacity: 1 }}
-              exit={{ scale: 1, opacity: 0.5 }}
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.1 }}
+              exit={{ scale: 1 }}
               transition={{
-                delay: 2.6,
+                delay: 2,
                 duration: 3,
                 repeat: Infinity,
                 ease: 'easeInOut',
@@ -305,11 +313,11 @@ const About = () => {
               className=" h-[calc(50vw/3)] w-[calc(80vw/3)] bg-[url('/assets/handdrawing02.png')] bg-cover origin-center"
             ></motion.div>
             <motion.div
-              initial={{ scale: 1, opacity: 0 }}
-              animate={{ scale: 1.1, opacity: 1 }}
-              exit={{ scale: 1, opacity: 0.5 }}
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.1 }}
+              exit={{ scale: 1 }}
               transition={{
-                delay: 2.8,
+                delay: 2.4,
                 duration: 3,
                 repeat: Infinity,
                 ease: 'easeInOut',
@@ -317,7 +325,7 @@ const About = () => {
               }}
               className=" h-[calc(50vw/3)] w-[calc(80vw/3)] bg-[url('/assets/handdrawing03.png')] bg-cover origin-center"
             ></motion.div>
-          </div>
+          </motion.div>
         </motion.div>
         {/* Biography text */}
         <div className="p-8  mx-[6rem] md:mx-[10rem] lg:mx-[15rem] xl:mx-[20rem] 2xl:mx-[30rem] flex flex-col gap-10 mt-[5rem] justify-end items-end rounded-3xl xl:justify-start text-lg lg:text-xl text-[#242424]">

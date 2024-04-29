@@ -26,11 +26,11 @@ const Contact = () => {
       className="h-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 2.2 }}
+      transition={{ delay: 1, duration: 2.2 }}
     >
       <div className="min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 pt-2 md:pt-15">
         {/* text container */}
-        <div className="min-h-1/2 my-20 lg:my-0 lg:w-1/2 flex items-center justify-center text-6xl font-bold">
+        <div className="min-h-1/2 my-20 lg:my-0 lg:w-1/2 flex items-center justify-center text-6xl">
           <motion.div>
             {text.split('').map((letter, index) => (
               <motion.span
@@ -42,6 +42,7 @@ const Contact = () => {
                   repeat: Infinity,
                   delay: index * 0.1,
                 }}
+                className={barlow.className}
               >
                 {letter}
               </motion.span>
