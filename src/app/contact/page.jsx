@@ -2,7 +2,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useState, useRef } from 'react'
-
+import { Barlow } from 'next/font/google'
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['200', '400', '600', '900'],
+})
 const Contact = () => {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
@@ -16,6 +20,7 @@ const Contact = () => {
     setError(false)
     setSuccess(false)
   }
+
   return (
     <motion.div
       className="h-full"
@@ -45,7 +50,7 @@ const Contact = () => {
         </div>
         {/* form container */}
         <motion.div
-          className="h-full lg:w-1/2 bg-red-50/30 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md flex items-center justify-center lg:mt-[10vh]"
+          className="h-full lg:w-1/2 bg-red-50/50 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md flex items-center justify-center lg:mt-[10vh]"
           initial={{ y: '100vh' }}
           animate={{ y: '0' }}
           transition={{ duration: 1, delay: 1 }}

@@ -9,6 +9,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Circle from './svg/circle'
 import BackToTopButton from './backToTopButton'
+import { Barlow } from 'next/font/google'
+const barlow = Barlow({ subsets: ['latin'], weight: ['200', '400', '600'] })
 const MobilePortfolio = () => {
   const developmentItems = [
     {
@@ -252,13 +254,19 @@ const MobilePortfolio = () => {
             href="/portfolio/#media"
             onClick={(e) => smoothScroll(e, 'media')}
           >
-            <h1 className="font-bold text-lg text-shadow  opacity-50 mb-2 md:mb-0 hover:text-[#AD88C6]">
+            <h1
+              className={`${barlow.className} font-bold text-lg   opacity-50 mb-2 md:mb-0 `}
+            >
               Media Production
             </h1>
           </Link>
-          <h1 className="font-bold text-4xl text-shadow mb-3">Development</h1>
+          <h1 className={`font-bold text-4xl  mb-3 ${barlow.className} `}>
+            Development
+          </h1>
           <Link href="/portfolio/#des" onClick={(e) => smoothScroll(e, 'des')}>
-            <h1 className="font-bold text-lg  text-shadow mb-10 opacity-50 hover:text-[#AD88C6]">
+            <h1
+              className={`${barlow.className} font-bold text-lg   opacity-50 mb-2 md:mb-0 `}
+            >
               Design
             </h1>
           </Link>
@@ -331,18 +339,22 @@ const MobilePortfolio = () => {
         <div className="h-[30vh] flex flex-col justify-center mb-10 items-center">
           {' '}
           <Link href="/portfolio/#dev" onClick={(e) => smoothScroll(e, 'dev')}>
-            <h1 className="font-bold text-lg text-shadow  opacity-50 mb-3 hover:text-[#AD88C6]">
+            <h1
+              className={`${barlow.className} font-bold text-lg   opacity-50 mb-2 md:mb-0 `}
+            >
               Development
             </h1>
           </Link>
-          <h1 className="font-bold text-4xl text-shadow mb-4 md:mb-20">
+          <h1 className={`font-bold text-4xl  mb-3 ${barlow.className} `}>
             Design
           </h1>
           <Link
             href="/portfolio/#media"
             onClick={(e) => smoothScroll(e, 'media')}
           >
-            <h1 className="font-bold text-lg  text-shadow mb-10 opacity-50 hover:text-[#AD88C6]">
+            <h1
+              className={`${barlow.className} font-bold text-lg   opacity-50 mb-2 md:mb-0 `}
+            >
               Media Production
             </h1>
           </Link>
@@ -415,15 +427,19 @@ const MobilePortfolio = () => {
         <div className="h-[30vh] flex flex-col justify-center mb-10 items-center">
           {' '}
           <Link href="portfolio/#des" onClick={(e) => smoothScroll(e, 'des')}>
-            <h1 className="font-bold text-lg text-shadow  opacity-50 mb-3 md:mb-0 hover:text-[#AD88C6]">
+            <h1
+              className={`${barlow.className} font-bold text-lg   opacity-50 mb-2 md:mb-0 `}
+            >
               Design
             </h1>
           </Link>
-          <h1 className="font-bold text-4xl text-shadow mb-4 md:mb-20">
+          <h1 className={`font-bold text-4xl  mb-3 ${barlow.className} `}>
             Media Production
           </h1>
           <Link href="portfolio/#dev" onClick={(e) => smoothScroll(e, 'dev')}>
-            <h1 className="font-bold text-lg  text-shadow mb-10 opacity-50 hover:text-[#AD88C6]">
+            <h1
+              className={`${barlow.className} font-bold text-lg   opacity-50 mb-2 md:mb-0 `}
+            >
               Development
             </h1>
           </Link>

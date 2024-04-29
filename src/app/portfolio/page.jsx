@@ -13,7 +13,7 @@ import Website from '@/components/svg/website'
 import Youtube from '@/components/svg/youtube'
 import MobilePortfolio from '@/components/mobilePortfolio'
 import BackToTopButton from '@/components/backToTopButton'
-
+import { Barlow } from 'next/font/google'
 //portfolio data
 const developmentItems = [
   {
@@ -234,7 +234,10 @@ const mediaItems = [
 
 const href = developmentItems[0].link[0].href
 href && console.log(href)
-
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['200', '400', '600', '900'],
+})
 const Portfolio = () => {
   const sectionOneRef = useRef()
   const { scrollYProgress: sectionOneScrollYProgress } = useScroll({
@@ -276,6 +279,7 @@ const Portfolio = () => {
     e.preventDefault()
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
   }
+
   return (
     <>
       <motion.div
@@ -292,21 +296,27 @@ const Portfolio = () => {
                 href="/portfolio/#media"
                 onClick={(e) => smoothScroll(e, 'media')}
               >
-                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5 md:mb-0">
+                <h1
+                  className={`${barlow.className} hover:opacity-100  text-2xl md:text-3xl 2xl:text-5xl  opacity-80 mb-5 md:mb-0`}
+                >
                   Media Production
                 </h1>
               </Link>
               <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
                 My works
               </span>
-              <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
+              <h1
+                className={`${barlow.className} text-7xl  uppercase lg:text-[8rem] xl:text-[11rem]`}
+              >
                 Development
               </h1>{' '}
               <Link
                 href="/portfolio/#des"
                 onClick={(e) => smoothScroll(e, 'des')}
               >
-                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+                <h1
+                  className={`${barlow.className} hover:opacity-100  text-2xl md:text-3xl 2xl:text-5xl  opacity-80 my-10 md:mb-0`}
+                >
                   Design
                 </h1>
               </Link>
@@ -319,7 +329,7 @@ const Portfolio = () => {
           <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
             <motion.div className="flex  z-50" style={{ x: sectionOneX }}>
               <div
-                className={`h-screen w-screen flex items-start justify-start bg-gradient-to-r from-purple-300 to-red-300`}
+                className={`h-screen w-screen flex items-start justify-start bg-gradient-to-r from-[#f9f8f6] to-red-300`}
               ></div>
               {developmentItems.map((item) => (
                 <div
@@ -332,7 +342,9 @@ const Portfolio = () => {
                     <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
                       Development
                     </span>
-                    <h1 className="text-xl  md:text-4xl lg:text-6xl xl:text-7xl font-bold ">
+                    <h1
+                      className={`text-xl  md:text-4xl lg:text-6xl xl:text-7xl  ${barlow.className}`}
+                    >
                       {item.title}
                     </h1>
                     <div className="relateive">
@@ -393,21 +405,27 @@ const Portfolio = () => {
                 href="/portfolio/#dev"
                 onClick={(e) => smoothScroll(e, 'dev')}
               >
-                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-5">
+                <h1
+                  className={`${barlow.className} hover:opacity-100  text-2xl md:text-3xl 2xl:text-5xl  opacity-80 mb-12 `}
+                >
                   Development
                 </h1>
               </Link>
               <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
                 My works
               </span>
-              <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
+              <h1
+                className={`${barlow.className} text-7xl  uppercase lg:text-[8rem] xl:text-[11rem]`}
+              >
                 Design
               </h1>
               <Link
                 href="/portfolio/#media"
                 onClick={(e) => smoothScroll(e, 'media')}
               >
-                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+                <h1
+                  className={`${barlow.className} hover:opacity-100  text-2xl md:text-3xl 2xl:text-5xl  opacity-80 my-10 md:mb-0`}
+                >
                   Media Production
                 </h1>
               </Link>
@@ -419,7 +437,7 @@ const Portfolio = () => {
           <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
             <motion.div className="flex" style={{ x: sectionTwoX }}>
               <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
+                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-[#f9f8f6] to-red-300`}
               ></div>
               {designItems.map((item) => (
                 <div
@@ -432,7 +450,9 @@ const Portfolio = () => {
                     <span className="text-sm md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem] ">
                       Design
                     </span>
-                    <h1 className=" text-xl font-bold md:text-4xl lg:text-6xl xl:text-7xl w-[80vw]">
+                    <h1
+                      className={`${barlow.className} text-xl  md:text-4xl lg:text-6xl xl:text-7xl w-[80vw]`}
+                    >
                       {item.title}
                     </h1>
 
@@ -494,21 +514,27 @@ const Portfolio = () => {
                 href="/portfolio/#des"
                 onClick={(e) => smoothScroll(e, 'des')}
               >
-                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow  opacity-50 mb-3 md:mb-5">
+                <h1
+                  className={`${barlow.className} hover:opacity-100  text-2xl md:text-3xl 2xl:text-5xl  opacity-80 my-10 md:mb-0`}
+                >
                   Design
                 </h1>
               </Link>
               <span className="text-[.8rem] md:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit ">
                 My works
               </span>
-              <h1 className="font-bold text-4xl md:text-7xl 2xl:text-9xl text-shadow mb-10 md:mb-20">
+              <h1
+                className={`${barlow.className} text-7xl  uppercase lg:text-[6rem] xl:text-[9rem]`}
+              >
                 Media Production
               </h1>
               <Link
                 href="/portfolio/#dev"
                 onClick={(e) => smoothScroll(e, 'dev')}
               >
-                <h1 className="hover:opacity-100 font-bold text-2xl md:text-3xl 2xl:text-5xl text-shadow mb-10 opacity-50">
+                <h1
+                  className={`${barlow.className} hover:opacity-100  text-2xl md:text-3xl 2xl:text-5xl  opacity-80 my-10 md:mb-0`}
+                >
                   Development
                 </h1>
               </Link>
@@ -520,7 +546,7 @@ const Portfolio = () => {
           <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden ">
             <motion.div className="flex" style={{ x: sectionThreeX }}>
               <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300`}
+                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r from-[#f9f8f6] to-red-300`}
               ></div>
 
               {mediaItems.map((item) => (
@@ -534,7 +560,9 @@ const Portfolio = () => {
                     <span className="text-[.8rem] md:text-sm lg:text-lg bg-black rounded-t-lg rounded-r-lg p-2 font-semibold flex items-center text-[#cace64] w-fit mb-[-2rem]">
                       Media Production
                     </span>
-                    <h1 className="text-xl w-[80vw] font-bold md:text-4xl lg:text-6xl xl:text-7xl ">
+                    <h1
+                      className={`${barlow.className} text-xl w-[80vw]  md:text-4xl lg:text-6xl xl:text-7xl `}
+                    >
                       {item.title}
                     </h1>
                     <div className="relateive">

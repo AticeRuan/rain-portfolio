@@ -12,7 +12,7 @@ const Expand = ({ width = '36', height = '36' }) => {
       <path
         d="M6 12L12 18L18 12M6 6L12 12L18 6"
         stroke="white"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </svg>
   )
@@ -29,7 +29,7 @@ const Close = ({ width = '36', height = '36' }) => {
       <path
         d="M18 12L12 6L6 12M18 18L12 12L6 18"
         stroke="white"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </svg>
   )
