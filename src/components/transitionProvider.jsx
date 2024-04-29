@@ -17,8 +17,18 @@ const TransitionProvider = ({ children }) => {
         <div key={pathName} className="w-screen h-auto area">
           <motion.div
             className="absolute  top-0 bottom-0 right-full h-screen w-screen z-30 rounded-r-[100px] bg-[#E6F14A]"
-            initial={{ x: '100%', width: '100%' }}
-            animate={{ x: 0, width: '0' }}
+            initial={{
+              x: '100%',
+              width: '100%',
+              borderTopRightRadius: 'none',
+              borderBottomRightRadius: 'none',
+            }}
+            animate={{
+              x: 0,
+              width: '0',
+              borderTopRightRadius: '100px',
+              borderBottomRightRadius: '100px',
+            }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
           />
           <motion.div
