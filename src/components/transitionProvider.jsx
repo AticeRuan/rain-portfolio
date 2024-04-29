@@ -13,43 +13,35 @@ const TransitionProvider = ({ children }) => {
   return (
     <>
       {' '}
-      <div className="w-screen h-auto area">
-        <div className="fixed radial-gradient-lime w-full h-full  -z-20"></div>
-        <div className="fixed radial-gradient-blue w-full h-full  -z-20"></div>
-        {/* <motion.div
-          className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40 "
-          animate={{ height: '0vh' }}
-          exit={{ height: '140vh' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        />
-        <motion.div
-          className="fixed m-auto top-0 bottom-0 left-0 right-0 text-5xl md:text-8xl cursor-default w-fit h-fit uppercase text-[#E6F14A] font-bold hidden md:block z-50"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 0 }}
-          transition={{ duration: 1.3, ease: 'easeOut' }}
-        >
-          {pathName.substring(1) || (
-            <div className={nicone.className}>
-              <p className="text-[#E6F14A] text-7xl md:text-[7rem] sm:text-8xl lg:text-[8rem] xl:text-[10rem]  2xl:text-[13rem] whitespace-nowrap capitalize">
-                Rain Ruan
-              </p>
-            </div>
-          )}
-        </motion.div>
-        <motion.div
-          className="h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30 "
-          initial={{ height: '140vh' }}
-          animate={{ height: '0vh', transition: { delay: 0.8 } }}
-        /> */}
-
-        <div className="h-24 ">
-          <Navbar />
+      <AnimatePresence>
+        <div key={pathName} className="w-screen h-auto area">
+          <motion.div
+            className="absolute  top-0 bottom-0 right-full h-screen w-screen z-30 rounded-r-[100px] bg-[#E6F14A]"
+            initial={{ x: '100%', width: '100%' }}
+            animate={{ x: 0, width: '0' }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+          />
+          <motion.div
+            className="absolute  top-0 bottom-0 right-full h-screen w-screen z-20 rounded-r-[100px] bg-[#ececec]"
+            initial={{ x: '100%', width: '100%' }}
+            animate={{ x: 0, width: 0 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: 'easeInOut' }}
+          />
+          <motion.div
+            className="absolute  top-0 bottom-0 right-full h-screen w-screen  rounded-r-[100px] z-10 bg-[#2d2d2d]"
+            initial={{ x: '100%', width: '100%' }}
+            animate={{ x: 0, width: 0 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: 'easeInOut' }}
+          />
+          <div className="h-24 ">
+            <Navbar />
+          </div>
+          <div className=" md:h-auto z-20">
+            {children}
+            <Footer />
+          </div>
         </div>
-        <div className=" md:h-auto z-20">
-          {children}
-          <Footer />
-        </div>
-      </div>
+      </AnimatePresence>
     </>
   )
 }

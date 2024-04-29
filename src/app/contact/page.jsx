@@ -26,7 +26,7 @@ const Contact = () => {
       className="h-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
+      transition={{ duration: 2.2 }}
     >
       <div className="min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 pt-2 md:pt-15">
         {/* text container */}
@@ -50,7 +50,7 @@ const Contact = () => {
         </div>
         {/* form container */}
         <motion.div
-          className="h-full lg:w-1/2 bg-red-50/50 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md flex items-center justify-center lg:mt-[10vh]"
+          className="h-full lg:w-1/2 bg-blue-50/30 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md flex items-center justify-center lg:mt-[10vh]"
           initial={{ y: '100vh' }}
           animate={{ y: '0' }}
           transition={{ duration: 1, delay: 1 }}

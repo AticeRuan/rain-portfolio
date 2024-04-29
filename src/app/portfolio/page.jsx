@@ -286,7 +286,7 @@ const Portfolio = () => {
         className="h-full  hidden md:block"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        transition={{ delay: 1, duration: 2.2 }}
       >
         {/* development */}
         <div className="h-[600vh] relative" ref={sectionOneRef} id="dev">

@@ -112,7 +112,7 @@ const About = () => {
       className="h-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
+      transition={{ duration: 2.2 }}
     >
       {/* mobile container */}
       <div className="h-full  pt-20 sm:hidden ">
@@ -264,7 +264,7 @@ const About = () => {
         {/* biography container */}
         {/* header */}
         <motion.div
-          className="  md:mx-[8rem] lg:mx-[10rem] xl:mx-[15rem] 2xl:mx-[20rem]  text-black rounded-3xl min-h-[calc(80vw/3)] w-fit relative  justify-center flex gap-6 backdrop-blur-xl flex-col items-start xl:items-center"
+          className="  md:mx-[8rem] lg:mx-[10rem] xl:mx-[15rem] 2xl:mx-[20rem]  text-black rounded-3xl min-h-[calc(80vw/3)] w-fit relative  justify-center flex gap-6  flex-col items-start xl:items-center"
           initial={{ height: '80vh' }}
           animate={{ height: '20vh' }}
           transition={{ delay: 3, duration: 1, ease: 'easeInOut' }}
@@ -273,17 +273,18 @@ const About = () => {
             className={`${barlow.className} text-6xl  uppercase md:text-[4rem] lg:text-[4rem] whitespace-pre-line opacity-0 xl:text-[6rem]`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2, ease: 'easeInOut' }}
+            transition={{ delay: 1, duration: 2, ease: 'easeInOut' }}
           >
             I love to create
           </motion.p>
           <div className="flex gap-6">
             <motion.div
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.1 }}
-              exit={{ scale: 1 }}
+              initial={{ scale: 1, opacity: 0 }}
+              animate={{ scale: 1.1, opacity: 1 }}
+              exit={{ scale: 1, opacity: 0.5 }}
               transition={{
-                duration: 1,
+                delay: 2.4,
+                duration: 3,
                 repeat: Infinity,
                 ease: 'easeInOut',
                 repeatType: 'reverse',
@@ -291,12 +292,12 @@ const About = () => {
               className=" h-[calc(50vw/3)] w-[calc(80vw/3)] bg-[url('/assets/handdrawing01.png')] bg-cover origin-center"
             ></motion.div>
             <motion.div
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.1 }}
-              exit={{ scale: 1 }}
+              initial={{ scale: 1, opacity: 0 }}
+              animate={{ scale: 1.1, opacity: 1 }}
+              exit={{ scale: 1, opacity: 0.5 }}
               transition={{
-                delay: 0.2,
-                duration: 1,
+                delay: 2.6,
+                duration: 3,
                 repeat: Infinity,
                 ease: 'easeInOut',
                 repeatType: 'reverse',
@@ -304,12 +305,12 @@ const About = () => {
               className=" h-[calc(50vw/3)] w-[calc(80vw/3)] bg-[url('/assets/handdrawing02.png')] bg-cover origin-center"
             ></motion.div>
             <motion.div
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.1 }}
-              exit={{ scale: 1 }}
+              initial={{ scale: 1, opacity: 0 }}
+              animate={{ scale: 1.1, opacity: 1 }}
+              exit={{ scale: 1, opacity: 0.5 }}
               transition={{
-                delay: 0.4,
-                duration: 1,
+                delay: 2.8,
+                duration: 3,
                 repeat: Infinity,
                 ease: 'easeInOut',
                 repeatType: 'reverse',

@@ -55,7 +55,7 @@ const Homepage = () => {
                 style={{ scale }}
               >
                 <h1
-                  className={`${barlow.className} text-8xl sm:text-[10rem] md:text-[11rem] lg:text-[16rem] xl:text-[18rem] 2xl:text-[23rem]    leading-10  font-light tracking-tightest backdrop-blur-md  `}
+                  className={`${barlow.className} text-8xl sm:text-[10rem] md:text-[11rem] lg:text-[16rem] xl:text-[18rem] 2xl:text-[23rem]    leading-10  font-light tracking-tightest  `}
                 >
                   Developer
                 </h1>

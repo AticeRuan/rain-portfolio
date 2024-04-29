@@ -15,7 +15,9 @@ const NavLink = ({ link }) => {
       <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-900 group-hover:h-full ease  rounded-lg"></span>
       <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-gray-900 group-hover:h-full ease  rounded-lg"></span>
       <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-black opacity-0 group-hover:opacity-100  rounded-lg"></span>
-      <span className="relative transition-colors duration-300 delay-200 group-hover:text-[#E6F14A] ease  rounded-lg">
+      <span
+        className={`relative transition-colors duration-300 delay-200 group-hover:text-[#E6F14A] ease  rounded-lg `}
+      >
         {link.title}
       </span>
     </Link>

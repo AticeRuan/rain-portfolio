@@ -7,6 +7,11 @@ import Github from './svg/github'
 import LinkedIn from './svg/linkedIn'
 import Email from './svg/email'
 import Logo from './svg/logo'
+import { Barlow } from 'next/font/google'
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['200', '400', '600', '900'],
+})
 const links = [
   { url: '/', title: 'Home' },
   { url: '/about', title: 'About' },
@@ -152,7 +157,7 @@ const Navbar = () => {
               <motion.div key={link.url} variants={listItemVariants}>
                 <Link
                   href={link.url}
-                  className="z-40"
+                  className={`z-40 ${barlow.className}`}
                   onClick={() => setOpen((prev) => !prev)}
                 >
                   {link.title}

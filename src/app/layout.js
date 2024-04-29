@@ -22,6 +22,8 @@ export default function RootLayout({ children }) {
       <body className={montserrat.className}>
         {' '}
         <div>
+          <div className="fixed radial-gradient-lime w-full h-full  -z-20"></div>
+          <div className="fixed radial-gradient-blue w-full h-full  -z-20"></div>
           <TransitionProvider>
             {' '}
             {children}
