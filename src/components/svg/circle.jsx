@@ -4,9 +4,9 @@ const Circle = () => {
   return (
     <motion.svg
       animate={{ rotate: 360 }}
-      transition={{ duration: 8, ease: 'linear', repeat: Infinity }}
+      transition={{ duration: 15, ease: 'linear', repeat: Infinity }}
       viewBox="0 0 300 300"
-      className="w-64 h-64 md:w-[500px] md:h-[500px] "
+      className="w-80 h-80 md:w-[500px] md:h-[500px] "
     >
       <defs>
         <path
@@ -16,7 +16,7 @@ const Circle = () => {
       </defs>
       <text fill="#000000">
         <textPath xlinkHref="#circlePath" className="text-xl">
-          Full Stack Developer and UI Designer
+          Full Stack Developer and UI Designer{' '}
         </textPath>
       </text>
     </motion.svg>

@@ -602,16 +602,14 @@ const Portfolio = () => {
         </div>
         {/* last screen */}
         <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
-          <h1 className="text-4xl mx-10 md:text-7xl font-bold ">
+          <h1 className={`text-4xl mx-10 md:text-7xl  ${barlow.className}`}>
             Let&apos;s talk about your project!
           </h1>
           <div className="relative">
-            <div className="">
-              <Circle />
-            </div>
-            <button></button>
+            <Circle />
+
             <Link
-              className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-[#cace64] rounded-full font-bold flex items-center justify-center z-30"
+              className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-[#E6F14A] rounded-full font-bold flex items-center justify-center z-30"
               href="/contact"
             >
               <button>Email me</button>
