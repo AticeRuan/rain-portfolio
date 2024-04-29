@@ -24,9 +24,9 @@ const Contact = () => {
   return (
     <motion.div
       className="h-full"
-      initial={{ y: '-200vh' }}
-      animate={{ y: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
     >
       <div className="min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 pt-2 md:pt-15">
         {/* text container */}

@@ -110,9 +110,9 @@ const About = () => {
   return (
     <motion.div
       className="h-full"
-      initial={{ y: '-200vh' }}
-      animate={{ y: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
     >
       {/* mobile container */}
       <div className="h-full  pt-20 sm:hidden ">
@@ -273,7 +273,7 @@ const About = () => {
             className={`${barlow.className} text-6xl  uppercase md:text-[4rem] lg:text-[4rem] whitespace-pre-line opacity-0 xl:text-[6rem]`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 2, ease: 'easeInOut' }}
+            transition={{ duration: 2, ease: 'easeInOut' }}
           >
             I love to create
           </motion.p>

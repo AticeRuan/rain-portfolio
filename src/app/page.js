@@ -33,12 +33,7 @@ const Homepage = () => {
   const isButtonInView = useInView(buttonRef, { margin: '-100px' })
 
   return (
-    <motion.div
-      className="h-full "
-      initial={{ y: '-200vh' }}
-      animate={{ y: 0 }}
-      transition={{ duration: 1 }}
-    >
+    <motion.div className="h-full ">
       <div className="flex flex-col h-full justify-center items-center ">
         {/* wrapper */}
         <motion.div

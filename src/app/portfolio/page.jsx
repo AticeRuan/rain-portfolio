@@ -284,9 +284,9 @@ const Portfolio = () => {
     <>
       <motion.div
         className="h-full  hidden md:block"
-        initial={{ y: '-200vh' }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
       >
         {/* development */}
         <div className="h-[600vh] relative" ref={sectionOneRef} id="dev">

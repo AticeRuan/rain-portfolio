@@ -11,12 +11,12 @@ const nicone = Stalemate({ subsets: ['latin'], weight: '400' })
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname()
   return (
-    <AnimatePresence mode="wait">
+    <>
       {' '}
-      <div key={pathName} className="w-screen h-auto area">
+      <div className="w-screen h-auto area">
         <div className="fixed radial-gradient-lime w-full h-full  -z-20"></div>
         <div className="fixed radial-gradient-blue w-full h-full  -z-20"></div>
-        <motion.div
+        {/* <motion.div
           className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40 "
           animate={{ height: '0vh' }}
           exit={{ height: '140vh' }}
@@ -40,7 +40,7 @@ const TransitionProvider = ({ children }) => {
           className="h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30 "
           initial={{ height: '140vh' }}
           animate={{ height: '0vh', transition: { delay: 0.8 } }}
-        />
+        /> */}
 
         <div className="h-24 ">
           <Navbar />
@@ -50,7 +50,7 @@ const TransitionProvider = ({ children }) => {
           <Footer />
         </div>
       </div>
-    </AnimatePresence>
+    </>
   )
 }
 
