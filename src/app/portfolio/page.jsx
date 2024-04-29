@@ -622,9 +622,9 @@ const Portfolio = () => {
       </motion.div>
       <motion.div
         className="h-full  block "
-        initial={{ y: '-200vh' }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
       >
         <MobilePortfolio />
       </motion.div>
