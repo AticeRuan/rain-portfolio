@@ -16,7 +16,7 @@ const skills = [
   'C#',
   'React.js',
   'Next.js',
-  'Matireal-UI',
+  'Material-UI',
   'CSS',
   'TailwindCSS',
   'Node.js',
