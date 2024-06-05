@@ -28,6 +28,10 @@ const developmentItems = [
         url: 'https://www.figma.com/proto/tBx94bCPuMNybD9EzGWsAs/Jinsook_website?node-id=14-238&starting-point-node-id=10%3A82&mode=design&t=soedmJuIIsUHSqi7-1',
         site: 'figma',
       },
+      {
+        url: 'https://jinsook-frontend.vercel.app/',
+        site: 'website',
+      },
     ],
     skills: [
       'React.js',
