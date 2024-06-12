@@ -29,7 +29,7 @@ const developmentItems = [
         site: 'figma',
       },
       {
-        url: 'https://jinsook-frontend.vercel.app/',
+        url: 'https://jinsook-web-gallery-frontend.vercel.app/',
         site: 'website',
       },
     ],
