@@ -38,6 +38,7 @@ const developmentItems = [
       'Node.js',
       'Express.js',
       'MongoDB',
+      'Framer Motion',
       'JWT',
       'RESTful API',
       'Tailwind Css',
