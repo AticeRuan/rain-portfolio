@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/modal": "^2.0.33",
-    "@nextui-org/react": "^2.3.6",
-    "@nextui-org/system": "^2.1.2",
-    "@nextui-org/theme": "^2.2.3",
+    "@nextui-org/modal": "^2.2.1",
+    "@nextui-org/react": "^2.6.2",
+    "@nextui-org/system": "^2.4.1",
+    "@nextui-org/theme": "^2.4.1",
     "framer-motion": "^11.1.7",
     "mongodb": "^6.11.0",
     "mongoose": "^8.8.4",

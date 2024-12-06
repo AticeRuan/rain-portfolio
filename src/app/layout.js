@@ -2,7 +2,6 @@ import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import TransitionProvider from '../components/transitionProvider'
 import Raindrop from '@/components/raindrop'
-import Head from 'next/head'
 import { NextUIProvider } from '@nextui-org/system'
 const inter = Inter({ subsets: ['latin'] })
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['500', '800'] })

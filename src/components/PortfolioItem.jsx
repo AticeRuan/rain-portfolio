@@ -58,20 +58,55 @@ const PortfolioItem = ({ data }) => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         isDismissable={true}
-        isKeyboardDismissDisabled={true}
         backdrop="blur"
+        placement="bottom-center"
+        scrollBehavior="outside"
+        size="4xl"
+        motionProps={{
+          variants: {
+            enter: {
+              transformOrigin: 'center',
+              height: 'fit-content',
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+                ease: 'easeOut',
+              },
+            },
+            exit: {
+              transformOrigin: 'center',
+              height: 0,
+              opacity: 0,
+              transition: {
+                duration: 0.2,
+                ease: 'easeIn',
+              },
+            },
+          },
+        }}
+        classNames={{
+          body: 'py-6 max-h-[80vh] overflow-y-auto',
+          backdrop: 'bg-[#292f46]/50 backdrop-opacity-40',
+          base: 'max-h-[90vh]',
+          //   base: 'border-[#292f46] bg-[#19172c] dark:bg-[#19172c] text-[#a8b0d3]',
+          //   header: 'border-b-[1px] border-[#292f46]',
+          //   footer: 'border-t-[1px] border-[#292f46]',
+        }}
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1 radial-gradient-blue">
+              <ModalHeader className="flex gap-4 radial-gradient-blue">
                 <p className="captalize text-xl">{data.title}</p>
-                <p className="text-sm uppercase text-white animate-pulse bg-[#cace64] w-fit p-1 rounded-tl-lg rounded-br-lg">
-                  {' '}
-                  {data.category}
-                </p>
+                {
+                  <p className="text-sm uppercase text-white animate-pulse bg-[#cace64] w-fit py-1 px-2  rounded-tl-lg rounded-br-lg">
+                    {data.category === 'media'
+                      ? 'media production'
+                      : data.category}
+                  </p>
+                }
               </ModalHeader>
-              <ModalBody className="radial-gradient-lime flex flex-col gap-10">
+              <ModalBody className="radial-gradient-lime flex flex-col gap-10 overflow-y-auto ">
                 {data.category !== 'media' ? (
                   <Image
                     src={data.img}
