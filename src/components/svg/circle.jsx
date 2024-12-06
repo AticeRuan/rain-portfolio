@@ -16,6 +16,7 @@ const Circle = () => {
       </defs>
       <text fill="#000000">
         <textPath xlinkHref="#circlePath" className="text-xl">
+          {' '}
           Full Stack Developer and UI Designer{' '}
         </textPath>
       </text>
