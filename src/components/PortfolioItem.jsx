@@ -42,7 +42,7 @@ const PortfolioItem = ({ data }) => {
             alt="portfolio item"
             width={800}
             height={600}
-            className="rounded-lg object-cover group-hover:scale-105 transition-transform duration-[0.8s] hover:cursor-pointer w-[500px] h-[200px] "
+            className="rounded-lg object-cover group-hover:scale-105 transition-transform duration-[0.8s] hover:cursor-pointer w-[500px] h-[200px] bg-white"
           />
         ) : (
           <iframe
