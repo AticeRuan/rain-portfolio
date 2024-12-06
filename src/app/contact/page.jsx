@@ -58,7 +58,7 @@ const Contact = () => {
         >
           <form
             ref={form}
-            className="text-lg md:text-lg flex flex-col gap-20 justify-center p-20 md:p-24 z-50"
+            className="text-lg md:text-lg flex flex-col gap-20 justify-center p-20 md:p-24 z-50 w-10/12"
             action="https://formsubmit.co/rainryy@gmail.com"
             method="POST"
           >

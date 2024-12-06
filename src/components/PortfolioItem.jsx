@@ -135,7 +135,7 @@ const PortfolioItem = ({ data }) => {
                 <div className="flex gap-3 flex-wrap w-full">
                   {data.skills.map((skill, index) => (
                     <div
-                      className="rounded p-2 text-[.6rem]  bg-black md:text-[.8rem] text-[#cace64] hover:bg-[#cace64] hover:text-black font-semibold"
+                      className="rounded p-2 text-[.6rem]  bg-black md:text-[.8rem] text-[#cace64] hover:bg-[#cace64] hover:text-black font-semibold transition-all duration-500 hover:cursor-pointer"
                       key={index}
                     >
                       {skill}
@@ -143,12 +143,13 @@ const PortfolioItem = ({ data }) => {
                   ))}
                 </div>
               </ModalBody>
-              <ModalFooter className="">
+              <ModalFooter className="flex gap-5">
                 {data.link.map((link) => (
                   <Link
                     href={link.url}
                     key={link.url}
-                    className="flex justify-end items-center gap-4 w-7"
+                    target="_blank"
+                    className="flex justify-end items-center gap-4  w-5 md:w-7"
                   >
                     {renderIconByLink(link.site)}
                   </Link>
