@@ -1,8 +1,10 @@
+import dbConnect from '@/lib/dbConnect'
 import PortfolioItem from '@/models/item'
 import { NextResponse } from 'next/server'
 
 export async function POST(req) {
   try {
+    await dbConnect()
     const body = await req.json()
     const itemData = body
 
@@ -31,6 +33,7 @@ export async function POST(req) {
 
 export async function GET() {
   try {
+    await dbConnect()
     const portfolioItems = await PortfolioItem.find().select('-__v')
 
     return NextResponse.json(

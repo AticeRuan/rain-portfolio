@@ -1,62 +1,65 @@
 import mongoose, { Schema } from 'mongoose'
 
-mongoose.connect(process.env.MONGODB_URI)
-mongoose.Promise = global.Promise
-
-const portfolioItemSchema = new Schema(
-  {
-    category: {
-      type: String,
-      required: true,
-      enum: ['development', 'design', 'media'],
-      default: 'development',
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-
-    desc: {
-      type: String,
-      required: true,
-    },
-    img: {
-      type: String,
-      required: true,
-    },
-    hashtag: {
-      type: String,
-      default: null,
-    },
-    link: [
+// This prevents multiple model compilations
+const PortfolioItem =
+  mongoose.models.PortfolioItem ||
+  mongoose.model(
+    'PortfolioItem',
+    new Schema(
       {
-        url: {
+        category: {
+          type: String,
+          required: true,
+          enum: ['development', 'design', 'media'],
+          default: 'development',
+        },
+        title: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        desc: {
           type: String,
           required: true,
         },
-        site: {
+        img: {
           type: String,
           required: true,
-          enum: ['figma', 'website', 'github', 'youtube'],
         },
+        hashtag: {
+          type: String,
+          default: null,
+        },
+        link: [
+          {
+            url: {
+              type: String,
+              required: true,
+            },
+            site: {
+              type: String,
+              required: true,
+              enum: ['figma', 'website', 'github', 'youtube'],
+            },
+          },
+        ],
+        skills: [
+          {
+            type: String,
+            required: true,
+          },
+        ],
       },
-    ],
-    skills: [
       {
-        type: String,
-        required: true,
+        timestamps: true,
       },
-    ],
-  },
-  {
-    timestamps: true,
-  },
-)
+    ),
+  )
 
 // Create indexes for common query fields
-portfolioItemSchema.index({ category: 1 })
-portfolioItemSchema.index({ title: 'text' })
+if (!PortfolioItem.collection.indexes().length) {
+  PortfolioItem.collection.createIndex({ category: 1 })
+  PortfolioItem.collection.createIndex({ title: 'text' })
+}
 
-const PortfolioItem = mongoose.model('PortfolioItem', portfolioItemSchema)
-
-module.exports = PortfolioItem
+export default PortfolioItem
