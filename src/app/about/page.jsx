@@ -15,7 +15,11 @@ const skills = [
   'JavaScript',
   'C#',
   'React.js',
+  'React Native',
+  'Expo',
   'Next.js',
+  'Redux Toolkit',
+  'RTK Query',
   'Material-UI',
   'CSS',
   'TailwindCSS',
@@ -26,6 +30,7 @@ const skills = [
   'Framer Motion',
   'RESTful API',
   'TypeScript',
+  'MSSQL',
   'MySQL',
   'PHP',
   'Git',
@@ -484,7 +489,7 @@ const About = () => {
       </div>
 
       <div className="md:hidden">
-        <BackToTopButton />
+        <BackToTopButton bgcolor="#E6F14A" />{' '}
       </div>
     </motion.div>
   )
