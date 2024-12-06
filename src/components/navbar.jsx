@@ -8,6 +8,7 @@ import LinkedIn from './svg/linkedIn'
 import Email from './svg/email'
 import Logo from './svg/logo'
 import { Barlow } from 'next/font/google'
+import { usePathname } from 'next/navigation'
 
 import {
   Modal,
@@ -90,14 +91,16 @@ const Navbar = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const [isLoading, setIsLoading] = useState(true)
   const pdfUrl = '/assets/CV_Rain_Ruan_2024.pdf'
+  const pathname = usePathname()
+  const isHome = pathname === '/'
   return (
     <>
       <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-lg z-[100] ">
         {/* md screen menu */}
-        <div className="hidden z-0 md:z-10 md:flex w-1/3 md:w-[80%] 2xl:w-1/3 gap-12 items-center">
+        <div className="hidden z-0 md:z-10 md:flex w-1/3 md:w-[80%] 2xl:w-1/3 gap-12 items-center ">
           <Link
             href="/"
-            className="h-fit flex text-sm bg-black rounded-md p-1 font-semibold items-center justify-center group w-[108px]"
+            className="h-fit flex text-sm bg-black rounded-md p-1 font-semibold items-center justify-center group w-[108px] relative"
           >
             <span className="w-12 h-8 flex items-center justify-center text-[#E6F14A] group-hover:bg-white group-hover:text-black group-hover:rounded transition-all duration-300">
               Rain
@@ -105,6 +108,13 @@ const Navbar = () => {
             <span className="w-12 h-8 flex items-center justify-center text-black bg-white rounded group-hover:text-[#E6F14A] group-hover:bg-black transition-all duration-300">
               Ruan
             </span>
+            {!isHome && (
+              <span
+                className={`transition-all duration-500 absolute -bottom-8 -right-10 bg-[#f5f1d0] p-2 rounded-b-lg rounded-tr-lg ${barlow.className} group-hover:opacity-80 opacity-0 text-sm`}
+              >
+                Back to Home
+              </span>
+            )}
           </Link>
           {links.map((link) => (
             <NavLink link={link} key={link.title} />
