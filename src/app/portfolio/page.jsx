@@ -64,7 +64,7 @@ const Portfolio = () => {
               <Loader />
             </div>
           ) : error ? (
-            <div className="w-full flex flex-col gap-2 items-center justify-center py-10 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md">
+            <motion.div className="w-full flex flex-col gap-2 items-center justify-center py-10 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md">
               <p
                 className={`${barlow.className} flex flex-col gap-1 font-[600] text-xl`}
               >
@@ -76,7 +76,7 @@ const Portfolio = () => {
               >
                 Retry
               </button>
-            </div>
+            </motion.div>
           ) : (
             <>
               {' '}
@@ -95,11 +95,16 @@ const Portfolio = () => {
                   </button>
                 ))}
               </div>
-              <div className="grid lg:w-[80vw] w-[90vw] xl:grid-cols-3 grid-cols-1 lg:grid-cols-2 md:ml-10 justify-items-center 2xl:grid-cols-4  ">
+              <motion.div
+                className="grid lg:w-[80vw] w-[90vw] xl:grid-cols-3 grid-cols-1 lg:grid-cols-2 md:ml-10 justify-items-center 2xl:grid-cols-4  "
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+              >
                 {filteredData.map((item) => (
                   <PortfolioItem key={item._id} data={item} />
                 ))}
-              </div>
+              </motion.div>
             </>
           )}
         </div>
