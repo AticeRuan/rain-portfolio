@@ -20,6 +20,7 @@ import {
   useDisclosure,
 } from '@nextui-org/react'
 import Loader from './Loader'
+import Medium from './svg/medium'
 const barlow = Barlow({
   subsets: ['latin'],
   weight: ['200', '400', '600', '900'],
@@ -134,8 +135,12 @@ const Navbar = () => {
           <Link href="https://github.com/AticeRuan">
             <Github />
           </Link>
+
           <Link href="https://www.linkedin.com/in/rain-ruan/">
             <LinkedIn />
+          </Link>
+          <Link href="https://medium.com/@rainryy">
+            <Medium />
           </Link>
           <Link href="mailto:rainryy@gmail.com">
             <Email />
@@ -150,6 +155,9 @@ const Navbar = () => {
           </Link>
           <Link href="https://www.linkedin.com/in/rain-ruan/">
             <LinkedIn width="25" height="auto" />
+          </Link>
+          <Link href="https://medium.com/@rainryy">
+            <Medium width="25" height="auto" />
           </Link>
           <Link href="mailto:rainryy@gmail.com">
             <Email width="25" height="auto" />
