@@ -8,13 +8,14 @@ import BackToTopButton from '@/components/backToTopButton'
 import { Barlow } from 'next/font/google'
 import useRead from '@/hooks/useRead'
 import PortfolioItem from '@/components/PortfolioItem'
+import Loader from '@/components/Loader'
 
 const barlow = Barlow({
   subsets: ['latin'],
   weight: ['200', '400', '600', '900'],
 })
 const Portfolio = () => {
-  const { data, loading, error } = useRead()
+  const { data, loading, error, refetch } = useRead()
   const [activeFilter, setActiveFilter] = useState('all')
   const sortedData = [...data].sort((a, b) => {
     const dateA = new Date(a.createdAt)
@@ -48,26 +49,43 @@ const Portfolio = () => {
           >
             Portfolio
           </h1>
-          <p className={`${barlow.className} text-xl w-10/12 md:ml-10 `}>
+          <p
+            className={`${barlow.className} text-lg md:text-xl w-10/12 xl:w-3/5 md:ml-10 `}
+          >
             I specialize in creating intuitive digital experiences, blending
             full-stack development, UX/UI design, and multimedia production. I
             focus on delivering functional, creative solutions that provide
             seamless, engaging user experiences across mobile apps, websites,
             and visual assets. Explore my work and discover more!
           </p>
+
           {loading ? (
-            <p>Loading...</p>
+            <div className="w-full flex items-center justify-center py-10">
+              <Loader />
+            </div>
           ) : error ? (
-            <p>Opps...Something went wrong...</p>
+            <div className="w-full flex flex-col gap-2 items-center justify-center py-10 shadow-lg ring-1 ring-black/5  rounded-xl backdrop-blur-md">
+              <p
+                className={`${barlow.className} flex flex-col gap-1 font-[600] text-xl`}
+              >
+                Opps...Something went wrong....x_x
+              </p>
+              <button
+                onClick={() => refetch()}
+                className="bg-black text-[#E6F14A] p-2 rounded-lg font-semibold hover:bg-[#E6F14A] hover:text-black transition-all duration-500"
+              >
+                Retry
+              </button>
+            </div>
           ) : (
             <>
               {' '}
-              <div className="flex  items-center justify-center text-center gap-6  md:ml-10">
+              <div className="flex  items-center justify-center text-center gap-2 md:gap-6  md:ml-10">
                 {filterButtons.map((button) => (
                   <button
                     key={button.value}
                     onClick={() => setActiveFilter(button.value)}
-                    className={`rounded-lg p-2 text-[.8rem] font-semibold transition-colors duration-200 ${
+                    className={`rounded-lg p-2 text-[.6rem] md:text-[.8rem] font-semibold transition-colors duration-200 ${
                       activeFilter === button.value
                         ? 'bg-[#cace64] text-black'
                         : 'bg-black text-[#cace64] hover:bg-[#cace64] hover:text-black'

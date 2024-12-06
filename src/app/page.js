@@ -6,12 +6,43 @@ import { useRef } from 'react'
 import Link from 'next/link'
 import { Stalemate, Barlow } from 'next/font/google'
 import Logo from '@/components/svg/logo'
+import BackToTopButton from '@/components/backToTopButton'
 
 const nicone = Stalemate({ subsets: ['latin'], weight: '400' })
 const barlow = Barlow({
   subsets: ['latin'],
   weight: ['200', '400', '600', '900'],
 })
+// skills data
+const skills = [
+  'JavaScript',
+  'C#',
+  'React.js',
+  'React Native',
+  'Expo',
+  'Next.js',
+  'Redux Toolkit',
+  'RTK Query',
+  'Material-UI',
+  'CSS',
+  'TailwindCSS',
+  'Node.js',
+  'Express.js',
+  'MongoDB',
+  'Firebase',
+  'Framer Motion',
+  'RESTful API',
+  'TypeScript',
+  'MSSQL',
+  'MySQL',
+  'PHP',
+  'Git',
+  'Figma',
+  'Photoshop',
+  'Canva',
+  'CapCut',
+  'Garage Band',
+]
 
 const Homepage = () => {
   const targetRef = useRef()
@@ -32,6 +63,18 @@ const Homepage = () => {
   const buttonRef = useRef()
   const isButtonInView = useInView(buttonRef, { margin: '-100px' })
 
+  const arrow02Ref = useRef()
+  const isArrow02InView = useInView(arrow02Ref, { margin: '-100px' })
+  const skillRef = useRef()
+  const skillTagRef = useRef()
+  const isSkillRefInView = useInView(skillRef, { margin: '-500px' })
+  const isSkillTagRefInView = useInView(skillTagRef, {
+    margin: '-100px',
+  })
+
+  const skillMobileRef = useRef()
+
+  const isSkillMobileRefInView = useInView(skillMobileRef, { once: true })
   return (
     <motion.div className="h-full ">
       <div className="flex flex-col h-full justify-center items-center ">
@@ -136,6 +179,22 @@ const Homepage = () => {
                 or small. I&apos;m eager to collaborate and bring your ideas to
                 life.
               </motion.p>
+              <div
+                ref={skillTagRef}
+                className="flex gap-1 md:gap-4 flex-wrap cursor-pointer md:w-[70vw] lg:w-[50vw] xl:w-[40vw] 2xl:w-[30vw]"
+              >
+                {skills.map((skill, index) => (
+                  <motion.div
+                    initial={{ opacity: 0, y: '50%' }}
+                    animate={isSkillTagRefInView ? { y: 0, opacity: 1 } : {}}
+                    transition={{ delay: index * 0.1 + 1, duration: 0.2 }}
+                    key={index}
+                    className="rounded p-2 text-xs md:text-sm  bg-black text-white hover:bg-white hover:text-black font-semibold"
+                  >
+                    {skill}
+                  </motion.div>
+                ))}
+              </div>
               <motion.p
                 initial={{ opacity: 0, y: '50%' }}
                 animate={isContentInView ? { y: 0, opacity: 1 } : {}}
@@ -150,15 +209,17 @@ const Homepage = () => {
                 className="w-full flex gap-4 mb-2"
                 initial={{ opacity: 0, y: '50%' }}
                 animate={isButtonInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ delay: 1.4, duration: 0.5 }}
+                transition={{ delay: 1, duration: 0.5 }}
               >
                 <Link href="/portfolio">
-                  <button className="p-3 md:p-4 rounded-full ring-1 ring-black bg-black text-[#E6F14A] text-sm md:text-xl font-black">
+                  <button
+                    className={`p-3 md:p-4 rounded-full bg-black text-[#E6F14A] text-sm md:text-xl font-semibold hover:bg-[#E6F14A] hover:text-black transition-all duration-300`}
+                  >
                     View My Work
                   </button>
                 </Link>
                 <Link href="/contact">
-                  <button className="p-3 md:p-4 rounded-full ring-1 ring-[#E6F14A] text-sm md:text-xl font-bold">
+                  <button className="p-3 md:p-4 rounded-full ring-1 ring-[#E6F14A] text-sm md:text-xl font-bold hover:text-[#E6F14A] hover:bg-white  transition-all duration-300 hover:ring-white">
                     Contact me
                   </button>
                 </Link>
@@ -167,6 +228,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+      <BackToTopButton bgcolor="#E6F14A" />
     </motion.div>
   )
 }

@@ -16,10 +16,13 @@ import Github from './svg/github'
 import Website from './svg/website'
 import Youtube from './svg/youtube'
 
+import { generateBlurPlaceholder } from '@/lib/generateBlurPlaceholder'
+
 const barlow = Barlow({
   subsets: ['latin'],
   weight: ['200', '400', '600', '900'],
 })
+
 const PortfolioItem = ({ data }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
@@ -30,6 +33,7 @@ const PortfolioItem = ({ data }) => {
     else if (site === 'youtube') return <Youtube />
     else return null
   }
+
   return (
     <>
       <div
@@ -42,6 +46,8 @@ const PortfolioItem = ({ data }) => {
             alt="portfolio item"
             width={800}
             height={600}
+            placeholder="blur"
+            blurDataURL={generateBlurPlaceholder()}
             className="rounded-lg object-cover group-hover:scale-105 transition-transform duration-[0.8s] hover:cursor-pointer w-[500px] h-[200px] bg-white"
           />
         ) : (
@@ -96,17 +102,16 @@ const PortfolioItem = ({ data }) => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex gap-4 radial-gradient-blue">
+              <ModalHeader className="flex flex-col md:flex-row md:gap-4 radial-gradient-blue">
                 <p className="captalize text-xl">{data.title}</p>
-                {
-                  <p className="text-sm uppercase text-white animate-pulse bg-[#cace64] w-fit py-1 px-2  rounded-tl-lg rounded-br-lg">
-                    {data.category === 'media'
-                      ? 'media production'
-                      : data.category}
-                  </p>
-                }
+
+                <p className="text-sm uppercase text-white animate-pulse bg-[#cace64] w-fit h-fit py-1 px-2  rounded-tl-lg rounded-br-lg">
+                  {data.category === 'media'
+                    ? 'media production'
+                    : data.category}
+                </p>
               </ModalHeader>
-              <ModalBody className="radial-gradient-lime flex flex-col gap-10 overflow-y-auto ">
+              <ModalBody className="radial-gradient-lime flex flex-col gap-10 overflow-y-auto items-center ">
                 {data.category !== 'media' ? (
                   <Image
                     src={data.img}
@@ -122,10 +127,12 @@ const PortfolioItem = ({ data }) => {
                   ></iframe>
                 )}
                 {data.hashtag && (
-                  <p className="text-[#7c7f1b] font-semibold">{data.hashtag}</p>
+                  <p className="text-[#7c7f1b] font-semibold w-full">
+                    {data.hashtag}
+                  </p>
                 )}
                 <p>{data.desc}</p>
-                <div className="flex gap-3 flex-wrap">
+                <div className="flex gap-3 flex-wrap w-full">
                   {data.skills.map((skill, index) => (
                     <div
                       className="rounded p-2 text-[.6rem]  bg-black md:text-[.8rem] text-[#cace64] hover:bg-[#cace64] hover:text-black font-semibold"
