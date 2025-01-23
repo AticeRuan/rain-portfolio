@@ -94,6 +94,7 @@ const Navbar = () => {
   const pdfUrl = '/assets/CV_Rain_Ruan_2024.pdf'
   const pathname = usePathname()
   const isHome = pathname === '/'
+
   return (
     <>
       <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-lg z-[100] ">
