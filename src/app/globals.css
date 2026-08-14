@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -205,7 +204,10 @@ body {
 }
 
 .text-shadow {
-  text-shadow: 0 0 10px #f3f0ff, 0 0 20px #d199f9, 0 0 40px #4f1fff,
+  text-shadow:
+    0 0 10px #f3f0ff,
+    0 0 20px #d199f9,
+    0 0 40px #4f1fff,
     0 0 80px #f3f0ff;
 }
 
