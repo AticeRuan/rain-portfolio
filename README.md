@@ -81,3 +81,4 @@ The project is deployed with Vercel and connected to the GitHub repository. Chan
 ## Project Notes
 
 This repository is actively maintained as both a personal portfolio and a practical project for improving modern web development, deployment and dependency-management workflows.
+
