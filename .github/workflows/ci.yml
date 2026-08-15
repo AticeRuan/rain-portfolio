@@ -35,3 +35,5 @@ jobs:
 
       - name: Production build
         run: npm run build
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
